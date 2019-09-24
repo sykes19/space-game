@@ -1,4 +1,4 @@
-/// @description It's me!
+/// @description
 // You can write your code in this editor
 score = 0;
 lives = 3;

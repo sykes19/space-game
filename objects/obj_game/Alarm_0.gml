@@ -1,4 +1,4 @@
-/// @description Asteroid spawning!
+/// @description Asteroid spawn timer
 // You can write your code in this editor
 if(room != rm_game){
 	exit;

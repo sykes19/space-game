@@ -1,4 +1,4 @@
-/// @description Score and lives and stuff!
+/// @description Score, lives, and debug text
 // You can write your code in this editor
 
 draw_text(20,(room_height-20), "L H "+string(gamepad_axis_value(0, gp_axislh)));

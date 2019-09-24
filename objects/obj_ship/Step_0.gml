@@ -26,6 +26,10 @@ if(moveVer < 0) if(vspeed > -vmax) vspeed -= accel;
 }
 
 //MOVEMENT WITH KEYBOARD AND MOUSE
+
+// IS NOT WORKING YET
+
+/*
 if (obj_game.input ==  1)
 {
 var chording = 0;
@@ -38,7 +42,7 @@ if(keyboard_check(ord("A"))) if(hspeed > -hmax) hspeed -= accel;
 if(keyboard_check(ord("S"))) if(vspeed < vmax) vspeed += accel;
 if(keyboard_check(ord("W"))) if(vspeed > -vmax) vspeed -= accel;
 }
-
+*/
 if (abs(hspeed) || abs(vspeed) > 0) friction = decel; // add some basic friction if I'm moving.
 
 

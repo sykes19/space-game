@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Beginning asteroid spawn
 // You can write your code in this editor
 if(room == rm_game){
 	repeat(6){
