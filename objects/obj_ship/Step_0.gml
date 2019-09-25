@@ -46,8 +46,9 @@ if (shipMoveSpeed > topspeed) {shipMoveSpeed = topspeed;} //clamp to topspeed
 hspeed = lengthdir_x(shipMoveSpeed, shipMoveAngle)
 vspeed = lengthdir_y(shipMoveSpeed, shipMoveAngle)
 
-if (inputMagnitude < .1) {friction = decel;} //slow the ship down if there is little input
-else {friction = 0} //otherwise don't, so we aren't affecting top speed
+//Linear friction ramp
+//Full input = no friction. Half input = half friction. No input = full friction.
+friction = (1-inputMagnitude) * decel ;
 
 // ----- END TIM -----
 
