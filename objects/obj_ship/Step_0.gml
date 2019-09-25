@@ -13,13 +13,8 @@ if input = "mouse"
 	var dir = point_direction(x,y,mouse_x,mouse_y);
 	image_angle = dir;
 }
-// ----- TIM CODE -----
 
-//Keyboard button bindings. Constants now, but can be set elsewhere for button remapping.
-var keyBindMove_N = ord("W");
-var keyBindMove_S = ord("S");
-var keyBindMove_E = ord("D");
-var keyBindMove_W = ord("A");
+// ----- TIM CODE -----
 
 //Fetch Keybaord Input
 //keyboard_check will return either False (0) or True (1),
@@ -51,10 +46,11 @@ if (shipMoveSpeed > topspeed) {shipMoveSpeed = topspeed;} //clamp to topspeed
 hspeed = lengthdir_x(shipMoveSpeed, shipMoveAngle)
 vspeed = lengthdir_y(shipMoveSpeed, shipMoveAngle)
 
-if (inputMagnitude < .1) {friction = .1;} //slow the ship down if there is little input
+if (inputMagnitude < .1) {friction = decel;} //slow the ship down if there is little input
 else {friction = 0} //otherwise don't, so we aren't affecting top speed
 
 // ----- END TIM -----
+
 //SHOOTING
 
 if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,60) // If missiles aren't full, start reloading

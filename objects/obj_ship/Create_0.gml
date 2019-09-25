@@ -12,5 +12,12 @@ fire = 18;
 refire = 18;
 accel = 0.3;
 topspeed = 3.5;
-decel = 0.09;
+decel = 0.12;
 missiles = 0;
+
+//Keyboard button bindings. Constants now, but can be set elsewhere for button remapping.
+keyBindMove_N = ord("W");
+keyBindMove_S = ord("S");
+keyBindMove_E = ord("D");
+keyBindMove_W = ord("A");
+keyBindStart = vk_space;

@@ -7,11 +7,11 @@ if (gamepad_axis_value(0, gp_axisrh) != 0 ||
 	gamepad_axis_value(0, gp_axislv) != 0) {
 		input = "gamepad";
 }
-if (keyboard_check(ord("W")) ||
-	keyboard_check(ord("A")) ||
-	keyboard_check(ord("S")) ||
-	keyboard_check(ord("D")) ||
-	keyboard_check(vk_space) ||
+if (keyboard_check(keyBindMove_N) ||
+	keyboard_check(keyBindMove_S) ||
+	keyboard_check(keyBindMove_E) ||
+	keyboard_check(keyBindMove_W) ||
+	keyboard_check(keyBindStart) ||
 	mouse_check_button(mb_any)) {
 		input = "mouse";
 }
