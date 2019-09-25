@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "71267dc7-38b3-4e63-b3d3-1e81dec95436",
+            "Value": {
+                "id": "39c14ef6-6eaa-4cf9-9ba3-71c64adcc9ed",
+                "resourcePath": "scripts\\ship_weapons\\ship_weapons.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7147fd3c-8026-434b-9f1d-73a9025a6b46",
             "Value": {
                 "id": "cd7a6bf1-fc9e-456d-a768-125a52d54c73",
@@ -480,7 +488,7 @@
         }
     ],
     "script_order": [
-        
+        "71267dc7-38b3-4e63-b3d3-1e81dec95436"
     ],
     "tutorial": ""
 }

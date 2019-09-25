@@ -13,7 +13,7 @@ if input = "mouse"
 	var dir = point_direction(x,y,mouse_x,mouse_y);
 	image_angle = dir;
 }
-
+ 
 // ----- TIM CODE -----
 
 //Fetch Keybaord Input
@@ -54,6 +54,7 @@ friction = (1-inputMagnitude) * decel ;
 
 //SHOOTING
 
+
 if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,60) // If missiles aren't full, start reloading
 
 if(gamepad_button_check(0, gp_shoulderlb) || mouse_check_button(mb_right)) {
@@ -83,18 +84,9 @@ if(gamepad_button_check(0, gp_shoulderlb) || mouse_check_button(mb_right)) {
 	}
 }
 
+//Temporary code to change weapons
+if (gamepad_button_check(0, gp_padu) || keyboard_check(ord("1"))) { weaponType = "basic";}
+if (gamepad_button_check(0, gp_padr) || keyboard_check(ord("2"))) { weaponType = "hunter";}
 
-
-if(gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)){
-	if (fire >= refire){
-		var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
-		iBullet.direction = image_angle;
-		audio_play_sound(sfx_pew2, 2, 0);
-		fire = 0;
-	}
-}
-
-if(fire < refire){
-	fire += 1;
-}							// As long as RT is held and gun is "charged", shoot bullet and empty charge.
-							// If gun is not charged, charge it!
+var weaponInput = gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)
+ship_weapons("step", weaponInput); // All primary weapon functionality now in ship_weapons script.

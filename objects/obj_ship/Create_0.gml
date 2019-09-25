@@ -8,12 +8,12 @@ if lives < 4
 }
 alarm_set(0,60);
 input = "mouse"; // This is to prevent errors when ship spawns
-fire = 18;
-refire = 18;
 accel = 0.3;
 topspeed = 3.5;
 decel = 0.12;
 missiles = 0;
+
+ship_weapons("init"); //Initalize ship_weapons script variables.
 
 //Keyboard button bindings. Constants now, but can be set elsewhere for button remapping.
 keyBindMove_N = ord("W");
