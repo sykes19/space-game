@@ -30,7 +30,7 @@ if (gamepad_button_check_pressed(0,gp_start)){
 }
 if (room == rm_game){
 	
-	if (score >= 1000){
+	if (score >= 1500){
 		room_goto(rm_win);
 		audio_play_sound(sfx_fanfare,2,0);
 	}

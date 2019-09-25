@@ -1,12 +1,12 @@
 /// @description Score, lives, and debug text
 // You can write your code in this editor
 
-draw_text(20,(room_height-20), "L H "+string(gamepad_axis_value(0, gp_axislh)));
-draw_text(20,(room_height-40), "L V "+string(gamepad_axis_value(0, gp_axislv)));
-draw_text(20,(room_height-60), "R H "+string(gamepad_axis_value(0, gp_axisrh)));
-draw_text(20,(room_height-80), "L V "+string(gamepad_axis_value(0, gp_axisrv)));
-if (input = mouse) draw_text(20,(room_height-100), "Device: mouse");
-else if (input = gamepad) draw_text(20,(room_height-100), "Device: gamepad");
+//draw_text(20,(room_height-20), "L H "+string(gamepad_axis_value(0, gp_axislh)));
+//draw_text(20,(room_height-40), "L V "+string(gamepad_axis_value(0, gp_axislv)));
+//draw_text(20,(room_height-60), "R H "+string(gamepad_axis_value(0, gp_axisrh)));
+//draw_text(20,(room_height-80), "L V "+string(gamepad_axis_value(0, gp_axisrv)));
+//if (input = mouse) draw_text(20,(room_height-100), "Device: mouse");
+//else if (input = gamepad) draw_text(20,(room_height-100), "Device: gamepad");
 
 
 switch(room){
@@ -21,11 +21,12 @@ switch(room){
 		draw_text_transformed_color(room_width/2,room_height/4,"SPACE GAME",4,4,0,c,c,c,c,1);
 		draw_text(room_width/2, room_height/2.5,
 		@"Hit START to begin
-Right Trigger: Fire
+Right Trigger: Fire Blaster
+Left Trigger: Missile Launch
 Left Stick: Move
 Right Stick: Aim
 
-Get 1000 points to WIN!");
+Get 1500 points to WIN!");
 		draw_set_halign(fa_left);
 		break;
 		
@@ -34,7 +35,9 @@ Get 1000 points to WIN!");
 		draw_set_halign(fa_center);
 		draw_text_transformed_color(room_width/2,room_height/4,"OH, PETER!",4,4,0,c,c,c,c,1);
 		draw_text(room_width/2, room_height/2.5,
-		@"YOU DID IT PETER!");
+		@"YOU DID IT PETER!
+
+Press START to play again!");
 	
 		break;
 		
@@ -44,7 +47,8 @@ Get 1000 points to WIN!");
 		draw_text_transformed_color(room_width/2,room_height/4,"OH, PETER",4,4,0,c,c,c,c,1);
 		draw_text(room_width/2, room_height/2.5,
 		@"YOU LOST, PETER
-YOU DID THIS BAD
+
+Press START to try again!
 SCORE: "+string(score));
 		break;
 }

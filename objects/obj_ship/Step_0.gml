@@ -1,5 +1,4 @@
 /// @description  Movement and controls
-move_wrap(true,true,sprite_width/2);
 
 // AIMING
 var aimHor = gamepad_axis_value(0, gp_axisrh);
@@ -49,50 +48,43 @@ if (inputMagnitude < .1) {friction = .1;} //slow the ship down if there is littl
 else {friction = 0} //otherwise don't, so we aren't affecting top speed
 
 // ----- END TIM -----
-
-/*
-//MOVEMENT WITH CONTROLLER
-if (obj_game.input == 0)
-{
-var moveHor = gamepad_axis_value(0, gp_axislh);       // Determine both angle of joystick, and thrust
-var moveVer = gamepad_axis_value(0, gp_axislv);
-var move = point_direction(0,0,moveHor,moveVer);      // Determining the direction I wish to move.
-var xx = abs(lengthdir_x(len, move));                 // Make these absolutes, speed is always positive.
-var yy = abs(lengthdir_y(len, move));			      // Direction is decided in logic below.
-var hmax = (topspeed*(xx/len))*abs(moveHor);          // % of top speed based on X angle and thrust
-var vmax = (topspeed*(yy/len))*abs(moveVer);	      // % of top speed based on Y angle and thrust
-
-if(moveHor > 0) if(hspeed < hmax) hspeed += accel;
-if(moveHor < 0) if(hspeed > -hmax) hspeed -= accel;
-if(moveVer > 0) if(vspeed < vmax) vspeed += accel;
-if(moveVer < 0) if(vspeed > -vmax) vspeed -= accel;
-}
-*/
-
-//MOVEMENT WITH KEYBOARD AND MOUSE
-/*
-if (obj_game.input ==  1)
-{
-var chording = 0;
-var hmax = (topspeed)-(
-);          
-var vmax = (topspeed)-(abs(hspeed));
-
-if(keyboard_check(ord("D"))) if(hspeed < hmax) hspeed += accel;
-if(keyboard_check(ord("A"))) if(hspeed > -hmax) hspeed -= accel;
-if(keyboard_check(ord("S"))) if(vspeed < vmax) vspeed += accel;
-if(keyboard_check(ord("W"))) if(vspeed > -vmax) vspeed -= accel;
-}
-
-if (abs(hspeed) || abs(vspeed) > 0) friction = decel; // add some basic friction if I'm moving.
-*/
-
-
 //SHOOTING
+
+if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,60) // If missiles aren't full, start reloading
+
+if(gamepad_button_check(0, gp_shoulderlb)) {
+	// If there are no missiles on the screen, and you have missiles in stock...
+	if(instance_exists(obj_missile) == 0 && missiles > 0)
+	{
+
+		// Prepare the list required to target asteroids, and populate the list with instances
+		var _list = ds_list_create(); // Create a variable to house the list
+		ds_list_clear(_list); // Make sure list is clear
+		var _targets = collision_circle_list(x,y,1000,obj_asteroid,false,false,_list,true);
+
+		// If targets were acquired at all, begin firing sequence
+		if _targets > 0
+		{
+			alarm_set(0,-1); // Pause missile generation during fire
+			for (var i = 0; missiles > 0; i++) // Fire 1 missile per asteroid, increment target list
+			{ 
+				var iMissile = instance_create_layer(x,y,"Instances",obj_missile);
+				iMissile.target = _list[| i]; // Create missile, assign target from _list
+				missiles -= 1;
+			}
+			audio_play_sound(sfx_missile,2,false);
+			ds_list_destroy(_list);
+			alarm_set(0,60);
+		}	
+	}
+}
+
+
+
 if(gamepad_button_check(0, gp_shoulderrb)){
 	if (fire >= refire){
-		var inst = instance_create_layer(x,y,"Instances",obj_bullet);
-		inst.direction = image_angle;
+		var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
+		iBullet.direction = image_angle;
 		audio_play_sound(sfx_pew2, 2, 0);
 		fire = 0;
 	}
@@ -102,25 +94,3 @@ if(fire < refire){
 	fire += 1;
 }							// As long as RT is held and gun is "charged", shoot bullet and empty charge.
 							// If gun is not charged, charge it!
-
-
-
-// Keyboard controls disabled for controller support
-
-/*if(keyboard_check(vk_left)){
-	image_angle += 5;
-}
-
-if(keyboard_check(vk_right)){
-	image_angle -= 5;
-}
-
-if(keyboard_check(vk_up)){
-	motion_add(image_angle, 0.09);
-}
-
-if(keyboard_check_pressed(vk_space)){
-	var inst = instance_create_layer(x,y,"Instances",obj_bullet);
-	inst.direction = image_angle;
-}
-*/

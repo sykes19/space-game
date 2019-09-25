@@ -6,4 +6,4 @@
 
 instance_create_layer(xx, yy, "Instances", obj_star);
 
-alarm[0] = 4;
+alarm[0] = 3;
