@@ -1,11 +1,18 @@
 /// @description  Movement and controls
 
 // AIMING
-var aimHor = gamepad_axis_value(0, gp_axisrh);
-var aimVer = gamepad_axis_value(0, gp_axisrv);
-var dir = point_direction(0,0,aimHor,aimVer);         // "dir" is the direction I am facing
-if((aimHor != 0) || (aimVer !=0)) image_angle = dir;  // Rotate ship to face aim direction
-
+if input = "gamepad"
+{
+	var aimHor = gamepad_axis_value(0, gp_axisrh);
+	var aimVer = gamepad_axis_value(0, gp_axisrv);
+	var dir = point_direction(0,0,aimHor,aimVer);         // "dir" is the direction I am facing
+	if((aimHor != 0) || (aimVer !=0)) image_angle = dir;  // Rotate ship to face aim direction
+}
+if input = "mouse"
+{
+	var dir = point_direction(x,y,mouse_x,mouse_y);
+	image_angle = dir;
+}
 // ----- TIM CODE -----
 
 //Keyboard button bindings. Constants now, but can be set elsewhere for button remapping.
@@ -13,7 +20,7 @@ var keyBindMove_N = ord("W");
 var keyBindMove_S = ord("S");
 var keyBindMove_E = ord("D");
 var keyBindMove_W = ord("A");
-	
+
 //Fetch Keybaord Input
 //keyboard_check will return either False (0) or True (1),
 //we can treat them as numbers and do simple math to get -1 to 1 range
@@ -52,7 +59,7 @@ else {friction = 0} //otherwise don't, so we aren't affecting top speed
 
 if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,60) // If missiles aren't full, start reloading
 
-if(gamepad_button_check(0, gp_shoulderlb)) {
+if(gamepad_button_check(0, gp_shoulderlb) || mouse_check_button(mb_right)) {
 	// If there are no missiles on the screen, and you have missiles in stock...
 	if(instance_exists(obj_missile) == 0 && missiles > 0)
 	{
@@ -81,7 +88,7 @@ if(gamepad_button_check(0, gp_shoulderlb)) {
 
 
 
-if(gamepad_button_check(0, gp_shoulderrb)){
+if(gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)){
 	if (fire >= refire){
 		var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
 		iBullet.direction = image_angle;

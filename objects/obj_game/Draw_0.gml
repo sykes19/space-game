@@ -20,11 +20,12 @@ switch(room){
 		draw_set_halign(fa_center);
 		draw_text_transformed_color(room_width/2,room_height/4,"SPACE GAME",4,4,0,c,c,c,c,1);
 		draw_text(room_width/2, room_height/2.5,
-		@"Hit START to begin
-Right Trigger: Fire Blaster
-Left Trigger: Missile Launch
-Left Stick: Move
-Right Stick: Aim
+		@"Hit START or SPACE to begin
+
+Right Trigger / Left Click: Fire Blaster
+Left Trigger / Right Click: Missile Launch
+Left Stick / WASD: Move
+Right Stick / Mouse: Aim
 
 Get 1500 points to WIN!");
 		draw_set_halign(fa_left);
@@ -37,7 +38,7 @@ Get 1500 points to WIN!");
 		draw_text(room_width/2, room_height/2.5,
 		@"YOU DID IT PETER!
 
-Press START to play again!");
+Press START or SPACE to play again!");
 	
 		break;
 		
