@@ -9,6 +9,7 @@ if (weaponAction == "init")
 	weaponCooldownCap = 100;	// Some limit to make sure it doesn't overflow
 
 	weaponHunterSeq = 0;		// Used by "hunter" weapon to track burst state
+	weaponHunterForce = 0;		// Used to force a 3rd round after firing 2
 	return;
 }
 
@@ -30,13 +31,14 @@ if (weaponAction == "step")
 			case "hunter":
 			{
 				weaponHunterSeq = 0;
+				weaponHunterForce = 0;
 				break;
 			}
 		}
 	}
 	// End cleanup
 	
-	// Weapon primary "step" code
+	// Weapon "step" code
 	switch (weaponType)
 	{		
 		case "basic": // Basic cannon
@@ -53,15 +55,19 @@ if (weaponAction == "step")
 		
 		case "hunter": // Metroid Prime Hunters inspired burst->charge weapon
 		{
-			if (weaponInput > 0) // If the fire button is currently pressed
+			if ((weaponInput > 0) || weaponHunterForce)
+			// If the fire button is currently pressed, or the next shot is forced
 			{
 				if ((weaponHunterSeq < 3) && (weaponCooldown >= 7))
 				{
+					//if (weaponHunterForce == 1) { weaponHunterForce = 0; }
 					var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
 					iBullet.direction = image_angle;
 					audio_play_sound(sfx_pew2, 2, 0);
 					weaponCooldown = 0;
-					weaponHunterSeq += 1; // We use this to track how many "burst" shots we've fired.
+					weaponHunterForce = 0;
+					weaponHunterSeq += 1; // We use this to track how many "burst" shots we've fired
+					if (weaponHunterSeq == 2) { weaponHunterForce = 1; } //If we've fired two shots, force a third
 				}
 			}
 			else // If the fire button is *not* currently pressed
@@ -71,17 +77,17 @@ if (weaponAction == "step")
 				{
 					// Since we don't have any charged shots, I'll just fire a shotgun blast
 					var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
-					iBullet.direction = image_angle - 5;
+					iBullet.direction = image_angle - 4;
 					var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
 					iBullet.direction = image_angle;
 					var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
-					iBullet.direction = image_angle + 5;
-					if (weaponCooldown >= 30) // More shot if you charged it a bit longer
+					iBullet.direction = image_angle + 4;
+					if (weaponCooldown >= 35) // More shot if you charged it a bit longer
 					{
 						var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
-						iBullet.direction = image_angle - 10;
+						iBullet.direction = image_angle - 8;
 						var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
-						iBullet.direction = image_angle + 10;
+						iBullet.direction = image_angle + 8;
 					}
 					audio_play_sound(sfx_pew2, 2, 0);
 					weaponCooldown = 0;
