@@ -51,15 +51,15 @@ if (shipMoveSpeed > topspeed) {shipMoveSpeed = topspeed;} //clamp to topspeed
 hspeed = lengthdir_x(shipMoveSpeed, shipMoveAngle)
 vspeed = lengthdir_y(shipMoveSpeed, shipMoveAngle)
 
-if (inputMagnitude < .1) {friction = .1;} //slow the ship down if there is little input
-else {friction = 0} //otherwise don't, so we aren't affecting top speed
+//Linear friction ramp
+//Full input = no friction. Half input = half friction. No input = full friction.
+friction = (1-inputMagnitude) * decel ;
 
 // ----- END TIM -----
 #endregion
 #region Weapons
 //SHOOTING
 
-if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,mReload) // If missiles aren't full, start reloading
 
 if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2)) {
 	if(instance_exists(obj_missile) == 0 && barrageActive == 0 && missiles > 0) 
@@ -97,18 +97,10 @@ if barrageActive == 1				// If targets are acquired and missiles are ready to be
 	}
 }	
 
-// Bullet firing
-if(gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)){
-	if (fire >= refire){
-		var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
-		iBullet.direction = image_angle;
-		audio_play_sound(sfx_pew2, 2, 0);
-		fire = 0;
-	}
-}
+//Temporary code to change weapons
+if (gamepad_button_check(0, gp_padu) || keyboard_check(ord("1"))) { weaponType = "basic";}
+if (gamepad_button_check(0, gp_padr) || keyboard_check(ord("2"))) { weaponType = "hunter";}
 
-if(fire < refire){
-	fire += 1;
-}							// As long as RT is held and gun is "charged", shoot bullet and empty charge.
-							// If gun is not charged, charge it!
+var weaponInput = gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)
+ship_weapons("step", weaponInput); // All primary weapon functionality now in ship_weapons script.
 #endregion

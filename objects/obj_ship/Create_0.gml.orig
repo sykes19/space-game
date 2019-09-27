@@ -12,13 +12,12 @@ input =				"mouse"; // This is to prevent errors when ship spawns
 #endregion
 
 #region BALANCE
-//fire =		18;
-//refire =	18;
+fire =		18;
+refire =	18;
 mRefire =	6;
 mReload =	45;
 accel =		0.3;
 topspeed =	3.5;
-decel =		0.06
 
 // Variable which will reference what missile pod to fire out of
 activePod = noone;
