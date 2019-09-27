@@ -1,6 +1,7 @@
 /// @description  Movement and controls
 
-// AIMING
+#region Aiming
+
 if input = "gamepad"
 {
 	var aimHor = gamepad_axis_value(0, gp_axisrh);
@@ -13,19 +14,18 @@ if input = "mouse"
 	var dir = point_direction(x,y,mouse_x,mouse_y);
 	image_angle = dir;
 }
+
+#endregion
+#region Movement
 // ----- TIM CODE -----
 
-//Keyboard button bindings. Constants now, but can be set elsewhere for button remapping.
-var keyBindMove_N = ord("W");
-var keyBindMove_S = ord("S");
-var keyBindMove_E = ord("D");
-var keyBindMove_W = ord("A");
+//All bindings are set in obj_game > Create ~Matt
 
 //Fetch Keybaord Input
 //keyboard_check will return either False (0) or True (1),
 //we can treat them as numbers and do simple math to get -1 to 1 range
-var moveInputX = keyboard_check(keyBindMove_E) - keyboard_check(keyBindMove_W);
-var moveInputY = keyboard_check(keyBindMove_S) - keyboard_check(keyBindMove_N);
+var moveInputX = keyboard_check(global.key_right) - keyboard_check(global.key_left);
+var moveInputY = keyboard_check(global.key_down) - keyboard_check(global.key_up);
 
 //Fetch controller input, just adding to keyboard input for now
 moveInputX += gamepad_axis_value(0, gp_axislh);
@@ -55,39 +55,49 @@ if (inputMagnitude < .1) {friction = .1;} //slow the ship down if there is littl
 else {friction = 0} //otherwise don't, so we aren't affecting top speed
 
 // ----- END TIM -----
+#endregion
+#region Weapons
 //SHOOTING
 
-if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,60) // If missiles aren't full, start reloading
+if (missiles < 6 && alarm_get(0) = 0) alarm_set(0,mReload) // If missiles aren't full, start reloading
 
-if(gamepad_button_check(0, gp_shoulderlb) || mouse_check_button(mb_right)) {
-	// If there are no missiles on the screen, and you have missiles in stock...
-	if(instance_exists(obj_missile) == 0 && missiles > 0)
-	{
-
-		// Prepare the list required to target asteroids, and populate the list with instances
-		var _list = ds_list_create(); // Create a variable to house the list
-		ds_list_clear(_list); // Make sure list is clear
-		var _targets = collision_circle_list(x,y,1000,obj_asteroid,false,false,_list,true);
-
-		// If targets were acquired at all, begin firing sequence
-		if _targets > 0
-		{
-			alarm_set(0,-1); // Pause missile generation during fire
-			for (var i = 0; missiles > 0; i++) // Fire 1 missile per asteroid, increment target list
-			{ 
-				var iMissile = instance_create_layer(x,y,"Instances",obj_missile);
-				iMissile.target = _list[| i]; // Create missile, assign target from _list
-				missiles -= 1;
-			}
-			audio_play_sound(sfx_missile,2,false);
-			ds_list_destroy(_list);
-			alarm_set(0,60);
-		}	
+if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2)) {
+	if(instance_exists(obj_missile) == 0 && barrageActive == 0 && missiles > 0) 
+	{   
+		barrageActive = 1;			// Allow barrage code to run and set it to fire immediately
+		_list = ds_list_create();	// Create a variable to house a blank list
+		ds_list_clear(_list);		// Make sure list is clear, in case it was populated before
+		_targets = collision_circle_list(x,y,1000,obj_asteroid,false,false,_list,true);
+		//Detect all asteroids in a large radius, file them into the list in order of distance from ship
+		mTarget = 0;				// Asteroid to target from list
+		activePod = 0;				// Set pod (angle) missile will fire at to default
 	}
 }
+if barrageActive == 1				// If targets are acquired and missiles are ready to be fired...
+{
+	alarm_set(0, mReload);			// Delay missile generation during barrage
+	if (missiles > 0 && barrageCooldown == 0 && _targets > 0)
+	{ 
+		var tempMissile = instance_create_layer(x,y,"Instances",obj_missile); // Create a missile
+		tempMissile.target = _list[| mTarget];	// Assign target to missile from target list
+		tempMissile.angle = image_angle+(pod[activePod]);// Set missile direction to pod angle
+		tempMissile.face = image_angle; // Set missile facing to forward-ish
+		activePod++;							// Fire next missile from different pod
+		missiles--;								// Deplete missile reserve
+		mTarget++;								// Increment target
+		barrageCooldown = 1;					// Initiate cooldown
+		alarm_set(2,mRefire);					// Initiate cooldown
+		audio_play_sound(sfx_missile,2,false);	// pew
+	}
+	if (missiles == 0 || _targets == 0)			// If the barrage is over, initiate cleanup and start reloading
+	{
+		barrageActive = 0;
+		ds_list_destroy(_list);
+		alarm_set(0,mReload);        
+	}
+}	
 
-
-
+// Bullet firing
 if(gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)){
 	if (fire >= refire){
 		var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
@@ -101,3 +111,4 @@ if(fire < refire){
 	fire += 1;
 }							// As long as RT is held and gun is "charged", shoot bullet and empty charge.
 							// If gun is not charged, charge it!
+#endregion

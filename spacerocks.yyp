@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "10cb417c-1ef0-4cb6-a747-f5ec65b89bd3",
+            "Value": {
+                "id": "8fdda278-0e90-4761-8d81-38f44c1e0ea0",
+                "resourcePath": "sprites\\spr_thrust1\\spr_thrust1.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "10eab5c0-26a8-46de-ac03-6c76f53bb1a1",
             "Value": {
                 "id": "1edd89df-722c-4ab0-81b1-3a2aca50e2af",
@@ -171,6 +179,30 @@
             "Value": {
                 "id": "6dc30d40-527c-4187-94a6-8eb1d185e943",
                 "resourcePath": "objects\\obj_explosion\\obj_explosion.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "3f8ce678-07cb-422c-8ed2-83607051113f",
+            "Value": {
+                "id": "f3ac5914-7881-401f-8e51-cacb8f4a5f7e",
+                "resourcePath": "sprites\\spr_thrust2\\spr_thrust2.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "47652d88-d1b0-422a-8216-0e1b747f70e4",
+            "Value": {
+                "id": "4326d7a5-35f2-4d8c-a8e8-2910e4668bda",
+                "resourcePath": "sounds\\sfx_explode\\sfx_explode.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "4fd18166-f8d0-414d-9854-9a9a4ccad533",
+            "Value": {
+                "id": "a6c77045-f06e-496a-b72e-6af1fa8cea7c",
+                "resourcePath": "objects\\obj_thrusterParticle\\obj_thrusterParticle.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -363,6 +395,14 @@
             "Value": {
                 "id": "666041aa-cbf4-41f7-99b2-70baff2ca9af",
                 "resourcePath": "sounds\\sfx_pew\\sfx_pew.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "c0a6bbe3-f8e7-4e1f-8b73-a43ee0783779",
+            "Value": {
+                "id": "91c436c8-f1cc-4407-b3c7-727650ec2e6f",
+                "resourcePath": "sounds\\sfx_thrust\\sfx_thrust.yy",
                 "resourceType": "GMSound"
             }
         },

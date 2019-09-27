@@ -1,7 +1,7 @@
 /// @description Room control, input definitions
 // You can write your code in this editor
 
-if (gamepad_button_check_pressed(0,gp_start) || keyboard_check(vk_space)){
+if (gamepad_button_check_pressed(0,global.gp_select) || keyboard_check(global.key_select)){
 	switch(room){
 		case rm_start:
 			room_goto(rm_game);

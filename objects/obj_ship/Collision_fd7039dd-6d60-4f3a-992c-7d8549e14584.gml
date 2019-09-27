@@ -2,13 +2,9 @@
 // You can write your code in this editor
 if instance_exists(spawnShield) == false
 {
-
-lives -= 1;
-
-
-audio_play_sound(sfx_pew, 2, 0);
-audio_play_sound(sfx_pew3, 2, 0);
-repeat(10){
+	lives -= 1;
+	audio_play_sound(sfx_explode, 2, 0);
+	repeat(10){
 	instance_create_layer(x,y,"Instances",obj_debris);
 }
 
@@ -19,12 +15,11 @@ instance_destroy();
 
 if instance_exists(spawnShield) == true
 {
+	audio_play_sound(sfx_hit_sm,2,0);
 	with(other)
 	{
 		instance_destroy();
 	}
-	audio_play_sound(sfx_pew, 2, 0);
-	audio_play_sound(sfx_pew3, 2, 0);
 	repeat(10){
 		instance_create_layer(x,y,"Instances",obj_debris);
 	}
