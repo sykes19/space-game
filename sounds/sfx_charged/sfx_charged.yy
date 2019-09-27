@@ -1,8 +1,8 @@
 {
-    "id": "c0a6bbe3-f8e7-4e1f-8b73-a43ee0783779",
+    "id": "cfe249fc-3374-448b-a08c-792420328bba",
     "modelName": "GMSound",
     "mvc": "1.0",
-    "name": "sfx_thrust",
+    "name": "sfx_charged",
     "audioGroupGuid": "7b2c4976-1e09-44e5-8256-c527145e03bb",
     "bitDepth": 1,
     "bitRate": 128,
@@ -10,5 +10,5 @@
     "preload": false,
     "sampleRate": 44100,
     "type": 0,
-    "volume": 0.14
+    "volume": 0.39
 }

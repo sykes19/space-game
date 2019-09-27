@@ -2,8 +2,8 @@
 // You can write your code in this editor
 
 #region INIT
+script_execute(ship_weapons, "init");
 pod =				noone;
-
 missiles =			0;
 barrageActive =		0;
 barrageCooldown =	0;
@@ -12,13 +12,11 @@ input =				"mouse"; // This is to prevent errors when ship spawns
 #endregion
 
 #region BALANCE
-//fire =		18;
-//refire =	18;
 mRefire =	6;
 mReload =	45;
 accel =		0.3;
 topspeed =	3.5;
-decel =		0.06
+decel =		0.1;
 
 // Variable which will reference what missile pod to fire out of
 activePod = noone;

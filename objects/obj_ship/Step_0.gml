@@ -60,6 +60,7 @@ friction = (1-inputMagnitude) * decel ;
 #region Weapons
 //SHOOTING
 
+if (missiles < 6 && alarm_get(0) = 0) then alarm_set(0, mReload) // Reload missiles passively
 
 if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2)) {
 	if(instance_exists(obj_missile) == 0 && barrageActive == 0 && missiles > 0) 
@@ -101,6 +102,6 @@ if barrageActive == 1				// If targets are acquired and missiles are ready to be
 if (gamepad_button_check(0, gp_padu) || keyboard_check(ord("1"))) { weaponType = "basic";}
 if (gamepad_button_check(0, gp_padr) || keyboard_check(ord("2"))) { weaponType = "hunter";}
 
-var weaponInput = gamepad_button_check(0, gp_shoulderrb) || mouse_check_button(mb_left)
+var weaponInput = gamepad_button_check(0, global.gp_fire1) || mouse_check_button(global.key_fire1)
 ship_weapons("step", weaponInput); // All primary weapon functionality now in ship_weapons script.
 #endregion

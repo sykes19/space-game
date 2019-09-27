@@ -18,7 +18,9 @@ switch(room){
 	case rm_start:
 		var c = c_yellow;
 		draw_set_halign(fa_center);
+		draw_set_font(fnt_text);
 		draw_text_transformed_color(room_width/2,room_height/4,"SPACE GAME",4,4,0,c,c,c,c,1);
+		draw_set_font(fnt_clean);
 		draw_text(room_width/2, room_height/2.5,
 		@"Hit START or SPACE to begin
 
@@ -34,7 +36,9 @@ Get 1500 points to WIN!");
 	case rm_win:
 		var c = c_lime;
 		draw_set_halign(fa_center);
+		draw_set_font(fnt_text);
 		draw_text_transformed_color(room_width/2,room_height/4,"OH, PETER!",4,4,0,c,c,c,c,1);
+		draw_set_font(fnt_clean);
 		draw_text(room_width/2, room_height/2.5,
 		@"YOU DID IT PETER!
 
@@ -45,11 +49,13 @@ Press START or SPACE to play again!");
 	case rm_gameover:
 		var c = c_lime;
 		draw_set_halign(fa_center);
+		draw_set_font(fnt_text);
 		draw_text_transformed_color(room_width/2,room_height/4,"OH, PETER",4,4,0,c,c,c,c,1);
+		draw_set_font(fnt_clean);
 		draw_text(room_width/2, room_height/2.5,
 		@"YOU LOST, PETER
 
-Press START to try again!
+Press START or SPACE to try again!
 SCORE: "+string(score));
 		break;
 }
