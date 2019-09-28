@@ -48,13 +48,15 @@ hspeed += lengthdir_x(inputMagnitude, inputAngle) * accel * (1.0 + decel);
 vspeed += lengthdir_y(inputMagnitude, inputAngle) * accel * (1.0 + decel);
 
 //Now we want to clamp our ship max speed. We will do it the same way we did for input by converting to polar
-shipMoveSpeed = point_distance(0, 0, hspeed, vspeed); //find magnitude (speed) of current movement
 shipMoveAngle = point_direction(0, 0, hspeed, vspeed); //find angle of current movement
-if (shipMoveSpeed > topspeed) {shipMoveSpeed = topspeed;} //clamp to topspeed
-	
-//Convert back to cartesian and replace existing speed.
-hspeed = lengthdir_x(shipMoveSpeed, shipMoveAngle);
-vspeed = lengthdir_y(shipMoveSpeed, shipMoveAngle);
+shipMoveSpeed = point_distance(0, 0, hspeed, vspeed); //find magnitude (speed) of current movement
+if (shipMoveSpeed > topspeed) //If we are going too fast
+{
+	shipMoveSpeed = topspeed; //clamp to topspeed
+	//Convert back to cartesian and replace existing speed.
+	hspeed = lengthdir_x(shipMoveSpeed, shipMoveAngle);
+	vspeed = lengthdir_y(shipMoveSpeed, shipMoveAngle);	
+} //No need to do this redunant math if we weren't going too fast.
 
 //Linear friction ramp
 //Full input = no friction. Half input = half friction. No input = full friction.
