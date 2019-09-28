@@ -6,6 +6,6 @@ if(image_alpha <= 0){
 }
 if speed = 0
 {
-	direction = irandom_range(dir-18,dir+18);
-	speed = random_range(2,5);
+	direction = irandom_range(dir-22,dir+22);
+	speed = random_range(4,12);
 }

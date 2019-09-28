@@ -79,6 +79,22 @@
             }
         },
         {
+            "Key": "23760287-8ded-4e10-9034-8eb92467308c",
+            "Value": {
+                "id": "cd626d92-6acd-4420-b28e-d0953e6eb87c",
+                "resourcePath": "objects\\obj_cursor\\obj_cursor.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2459de2d-98ed-4e8e-88b6-ef08008880c0",
+            "Value": {
+                "id": "38cd6fe5-7224-4aca-8412-0959c5fe2c7a",
+                "resourcePath": "sprites\\sprite14\\sprite14.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "25e31af6-7eca-46ae-8eb1-ca8f7e2598ea",
             "Value": {
                 "id": "3c3a66b8-dbe9-4b80-adc0-d6d8f8a876bc",
@@ -127,6 +143,14 @@
             }
         },
         {
+            "Key": "2fabf2f9-0153-45a7-8e51-f015c9cb7bb6",
+            "Value": {
+                "id": "6d5452cd-0c0e-4153-9a21-38cac4b899d0",
+                "resourcePath": "sprites\\spr_star_big\\spr_star_big.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "323b5a02-731b-40ea-bb21-df7561de5708",
             "Value": {
                 "id": "278a313d-ef67-4d1c-b1f6-9f4c665c332e",
@@ -140,6 +164,14 @@
                 "id": "4e03d990-5de9-45aa-9a77-d19ac5152fc5",
                 "resourcePath": "views\\324d6ea4-6349-4f2e-a46d-b60a9c0bb02f.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "33618844-cab3-413d-b85c-56b8ade67cd0",
+            "Value": {
+                "id": "9f124d50-b0b5-466b-bb61-f29e383424d9",
+                "resourcePath": "sprites\\spr_star\\spr_star.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -431,6 +463,14 @@
             }
         },
         {
+            "Key": "ae1925cc-caa2-4d57-89d0-8454f8457f67",
+            "Value": {
+                "id": "4bad4862-64d4-4c65-9d01-907bc7701db3",
+                "resourcePath": "sprites\\spr_ship\\spr_ship.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "afcf4770-49c1-4b23-9c81-a04094bf4bf0",
             "Value": {
                 "id": "56d39178-96e3-46b7-9107-840f72b4f33d",
@@ -519,14 +559,6 @@
             }
         },
         {
-            "Key": "d155e69b-8d88-4868-8b4c-3d4648443fe0",
-            "Value": {
-                "id": "429de79d-86bb-45bd-a66c-76f8e6515c7b",
-                "resourcePath": "sprites\\spr_ship\\spr_ship.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "d2291611-0358-4f20-9f07-f442f1b91f06",
             "Value": {
                 "id": "d1e02776-1a02-4e8b-9992-f5361fd99c19",
@@ -559,14 +591,6 @@
             }
         },
         {
-            "Key": "e79bcc39-b4e6-43b4-b00d-1106c6ed45ca",
-            "Value": {
-                "id": "e7b79d62-69bb-4622-8814-ca802c48a83d",
-                "resourcePath": "sprites\\spr_ship2\\spr_ship2.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "e8cc37e7-fbca-4959-90b4-b7b9e86862c1",
             "Value": {
                 "id": "2facf011-6de7-4fc8-86b8-235a2ae15f2f",
@@ -578,7 +602,7 @@
             "Key": "ebf033b8-8707-4e5f-ac65-2a0256a2fad7",
             "Value": {
                 "id": "b113cec6-dad7-4f04-ba22-207e1e1ae827",
-                "resourcePath": "sprites\\spr_ship1\\spr_ship1.yy",
+                "resourcePath": "sprites\\spr_backup_ship\\spr_backup_ship.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -588,6 +612,14 @@
                 "id": "d7bb0079-2d29-4d3e-a36d-f53c00ecb96b",
                 "resourcePath": "sounds\\sfx_hit_bg\\sfx_hit_bg.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "efde4963-b481-49de-ae26-d7a2c0bc3f85",
+            "Value": {
+                "id": "e3a90172-b103-4c76-af41-649b5c35baee",
+                "resourcePath": "fonts\\fnt_debug\\fnt_debug.yy",
+                "resourceType": "GMFont"
             }
         },
         {

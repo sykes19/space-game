@@ -5,6 +5,7 @@
 
 script_execute(ship_weapons, "init");
 image_speed = 0;
+image_index = 0;
 pod =				noone;
 missiles =			0;
 barrageActive =		0;
@@ -14,11 +15,13 @@ input =				"mouse"; // This is to prevent errors when ship spawns
 #endregion
 
 #region BALANCE
+aniSpeed =	2;
+aniDelay =	10;
 mRefire =	6;
 mReload =	45;
-accel =		0.3;
-topspeed =	3.5;
-decel =		0.1;
+accel =		0.9;
+topspeed =	7;
+decel =		0.3;
 
 // Variable which will reference what missile pod to fire out of
 activePod = noone;

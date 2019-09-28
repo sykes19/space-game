@@ -60,9 +60,8 @@ friction = (1-inputMagnitude) * decel ;
 #region Weapons
 //MISSILES
 
-//Animation control
-//sprite_get_tpe()
-//var frame = 0; repeat(
+//Pause animation if at default animation
+
 
 //Firing Sequence
 if (missiles < 6 && alarm_get(0) = 0) then alarm_set(0, mReload) // Reload missiles passively
@@ -71,6 +70,7 @@ if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fir
 	if(instance_exists(obj_missile) == 0 && barrageActive == 0 && missiles > 0) 
 	{   
 		barrageActive = 1;			// Allow barrage code to run and set it to fire immediately
+		alarm[3] = 1;
 		_list = ds_list_create();	// Create a variable to house a blank list
 		ds_list_clear(_list);		// Make sure list is clear, in case it was populated before
 		_targets = collision_circle_list(x,y,1000,obj_asteroid,false,false,_list,true);

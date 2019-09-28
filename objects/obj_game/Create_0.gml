@@ -7,16 +7,10 @@ gamepad		= 0;
 mouse		= 1;
 input		= mouse;
 
-global.screenw          = display_get_width();
-global.screenh			= display_get_height();
-global.view_width		= camera_get_view_width(view_camera[0]);
-global.view_height		= camera_get_view_height(view_camera[0]);
 global.pause			= false;
 
 draw_set_font(fnt_text);
 audio_play_sound(sng_violet,2,1);
-display_set_gui_size(global.view_width, global.view_height);
-display_set_gui_maximise(2,2,0,0);
 gamepad_set_axis_deadzone(0, 0.15);
 
 global.key_select	= vk_space;

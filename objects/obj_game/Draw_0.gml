@@ -9,10 +9,12 @@
 //else if (input = gamepad) draw_text(20,(room_height-100), "Device: gamepad");
 
 
-switch(room){
+/*switch(room){
 	case rm_game:
+		draw_set_font(fnt_clean);
 		draw_text(20, 20, "SCORE: "+string(score));
 		draw_text(20, 40, "LIVES: "+string(lives));
+		draw_set_font(fnt_debug);
 		draw_text(10, room_height-30, "F4: Toggle Fullscreen");
 		break;
 		

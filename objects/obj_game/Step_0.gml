@@ -1,7 +1,5 @@
 /// @description Room control, input definitions
 // You can write your code in this editor
-if keyboard_check_pressed(vk_f4) window_set_fullscreen(!window_get_fullscreen())
-
 if (gamepad_button_check_pressed(0,global.gp_select) || keyboard_check(global.key_select)){
 	switch(room){
 		case rm_start:

@@ -1,5 +1,62 @@
 /// @description Menu
 // You can write your code in this editor
+switch(room){
+	case rm_game:
+		draw_set_font(fnt_clean);
+		draw_text(20, 20, "SCORE: "+string(score));
+		draw_text(20, 40, "LIVES: "+string(lives));
+		draw_set_font(fnt_debug);
+		draw_text(10, global.screenh-30, "F4: Toggle Fullscreen");
+		break;
+		
+	case rm_start:
+		var c = c_yellow;
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_text);
+		draw_text_transformed_color(global.screenw/2,global.screenh/4,"SPACE GAME",4,4,0,c,c,c,c,1);
+		draw_set_font(fnt_clean);
+		draw_text(global.screenw/2, global.screenh/2.5,
+		@"Hit START or SPACE to begin
+
+Right Trigger / Left Click: Fire Blaster
+Left Trigger / Right Click: Missile Launch
+Left Stick / WASD: Move
+Right Stick / Mouse: Aim
+
+Get 1500 points to WIN!");
+		draw_set_halign(fa_left);
+		break;
+		
+	case rm_win:
+		var c = c_lime;
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_text);
+		draw_text_transformed_color(global.screenw/2,global.screenh/4,"OH, PETER!",4,4,0,c,c,c,c,1);
+		draw_set_font(fnt_clean);
+		draw_text(global.screenw/2, global.screenh/2.5,
+		@"YOU DID IT PETER!
+
+Press START or SPACE to play again!");
+	
+		break;
+		
+	case rm_gameover:
+		var c = c_lime;
+		draw_set_halign(fa_center);
+		draw_set_font(fnt_text);
+		draw_text_transformed_color(global.screenw/2,global.screenh/4,"OH, PETER",4,4,0,c,c,c,c,1);
+		draw_set_font(fnt_clean);
+		draw_text(global.screenw/2, global.screenh/2.5,
+		@"YOU LOST, PETER
+
+Press START or SPACE to try again!
+SCORE: "+string(score));
+		break;
+}
+
+
+
+
 if(!global.pause) exit;
 
 var gwidth = global.view_width, gheight = global.view_height;
