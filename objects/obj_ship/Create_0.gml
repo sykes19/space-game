@@ -19,9 +19,9 @@ aniSpeed =	2;
 aniDelay =	10;
 mRefire =	6;
 mReload =	45;
-accel =		0.9;
+accel =		1.5;
 topspeed =	7;
-decel =		0.3;
+decel =		0.8;
 
 // Variable which will reference what missile pod to fire out of
 activePod = noone;

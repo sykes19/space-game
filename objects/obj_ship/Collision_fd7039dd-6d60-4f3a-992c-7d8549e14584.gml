@@ -4,13 +4,13 @@ if instance_exists(spawnShield) == false
 {
 	lives -= 1;
 	audio_play_sound(sfx_explode, 2, 0);
+	instance_destroy();
 	repeat(10){
 	instance_create_layer(x,y,"Instances",obj_debris);
 }
 
 obj_game.alarm[1] = 60;
 
-instance_destroy();
 }
 
 if instance_exists(spawnShield) == true
