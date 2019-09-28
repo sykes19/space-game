@@ -1,10 +1,13 @@
 /// @description Menu
 // You can write your code in this editor
+
 switch(room){
 	case rm_game:
 		draw_set_font(fnt_clean);
 		draw_text(20, 20, "SCORE: "+string(score));
 		draw_text(20, 40, "LIVES: "+string(lives));
+		//draw_text(20, 20, "gui h/w: "+string(display_get_gui_width())+" + "+string(display_get_gui_height()));
+		//draw_text(20, 40, "ratio: "+string(obj_display_manager.wRatio)+" + "+string(obj_display_manager.hRatio));
 		draw_set_font(fnt_debug);
 		draw_text(10, global.screenh-30, "F4: Toggle Fullscreen");
 		break;
@@ -19,7 +22,7 @@ switch(room){
 		@"Hit START or SPACE to begin
 
 Right Trigger / Left Click: Fire Blaster
-Left Trigger / Right Click: Missile Launch
+Left Trigger / Right Click: Missile Launch 
 Left Stick / WASD: Move
 Right Stick / Mouse: Aim
 

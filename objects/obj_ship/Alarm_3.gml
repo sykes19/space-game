@@ -2,7 +2,6 @@
 // You can write your code in this editor
 if image_index < image_number -1 {
 	image_index += 1;
-	show_debug_message("Opening pods...");
 	alarm[3] = aniSpeed;
 }
 else if barrageActive == 0 

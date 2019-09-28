@@ -3,7 +3,6 @@
 if image_index > 0
 {
 	image_index -= 1;
-	show_debug_message("Closing pods");
 	alarm[4] = aniSpeed;
 }
 
