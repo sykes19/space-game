@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 #region INIT
+
 script_execute(ship_weapons, "init");
+image_speed = 0;
 pod =				noone;
 missiles =			0;
 barrageActive =		0;

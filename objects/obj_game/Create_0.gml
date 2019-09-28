@@ -7,8 +7,10 @@ gamepad		= 0;
 mouse		= 1;
 input		= mouse;
 
-global.view_width		= camera_get_view_width(view_camera[0])
-global.view_height		= camera_get_view_height(view_camera[0])
+global.screenw          = display_get_width();
+global.screenh			= display_get_height();
+global.view_width		= camera_get_view_width(view_camera[0]);
+global.view_height		= camera_get_view_height(view_camera[0]);
 global.pause			= false;
 
 draw_set_font(fnt_text);

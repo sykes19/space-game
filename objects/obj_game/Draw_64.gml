@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Menu
 // You can write your code in this editor
 if(!global.pause) exit;
 

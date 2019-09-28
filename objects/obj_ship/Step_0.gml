@@ -32,9 +32,9 @@ moveInputX += gamepad_axis_value(0, gp_axislh);
 moveInputY += gamepad_axis_value(0, gp_axislv);
 
 //Clamp max input magnitude
-inputMagnitude = point_distance(0, 0, moveInputX, moveInputY); //find magnitude of raw input
+inputMagnitude = point_distance(0, 0, moveInputX, moveInputY)*1.1; //find magnitude of raw input
 inputAngle = point_direction(0, 0, moveInputX, moveInputY); //find angle of raw input
-if ((inputMagnitude*1.1) > 1.0) //add a bit to the input (to accommodate for bad controllers)
+if (inputMagnitude > 1.0) //add a bit to the input (to accommodate for bad controllers)
 	{inputMagnitude = 1.0;} //clamp to max magnitude of 1.0
 
 //With this, lengthdir_x and _y will give us a -1.0 to 1.0 range of acceptable inputs
@@ -58,8 +58,13 @@ friction = (1-inputMagnitude) * decel ;
 // ----- END TIM -----
 #endregion
 #region Weapons
-//SHOOTING
+//MISSILES
 
+//Animation control
+//sprite_get_tpe()
+//var frame = 0; repeat(
+
+//Firing Sequence
 if (missiles < 6 && alarm_get(0) = 0) then alarm_set(0, mReload) // Reload missiles passively
 
 if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2)) {
@@ -97,7 +102,7 @@ if barrageActive == 1				// If targets are acquired and missiles are ready to be
 		alarm_set(0,mReload);        
 	}
 }	
-
+//GUN
 //Temporary code to change weapons
 if (gamepad_button_check(0, gp_padu) || keyboard_check(ord("1"))) { weaponType = "basic";}
 if (gamepad_button_check(0, gp_padr) || keyboard_check(ord("2"))) { weaponType = "hunter";}

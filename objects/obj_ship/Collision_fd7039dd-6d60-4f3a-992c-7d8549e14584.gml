@@ -8,7 +8,7 @@ if instance_exists(spawnShield) == false
 	instance_create_layer(x,y,"Instances",obj_debris);
 }
 
-obj_spawner.alarm[0] = 60;
+obj_game.alarm[1] = 60;
 
 instance_destroy();
 }
