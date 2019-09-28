@@ -1,6 +1,8 @@
 /// @description Menu
 // You can write your code in this editor
-
+		if window_get_fullscreen() == 0 draw_set_font(fnt_debug_big);
+		else draw_set_font(fnt_debug);
+		draw_text(10, global.screenh-30, "F4: Toggle Fullscreen");
 switch(room){
 	case rm_game:
 		draw_set_font(fnt_clean);
@@ -8,8 +10,8 @@ switch(room){
 		draw_text(20, 40, "LIVES: "+string(lives));
 		//draw_text(20, 20, "gui h/w: "+string(display_get_gui_width())+" + "+string(display_get_gui_height()));
 		//draw_text(20, 40, "ratio: "+string(obj_display_manager.wRatio)+" + "+string(obj_display_manager.hRatio));
-		draw_set_font(fnt_debug);
-		draw_text(10, global.screenh-30, "F4: Toggle Fullscreen");
+
+
 		break;
 		
 	case rm_start:

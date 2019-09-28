@@ -23,6 +23,7 @@ if(ideal_width & 1) ideal_width++;
 surface_resize(application_surface,ideal_width,ideal_height);
 window_set_size(ideal_width/2,ideal_height/2);
 
+
 //display_set_gui_maximize(1,1,0,0);
 
 room_goto(rm_stars);

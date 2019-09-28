@@ -383,6 +383,14 @@
             }
         },
         {
+            "Key": "8f131a86-e910-4d30-a232-61ccf6680a05",
+            "Value": {
+                "id": "b71eb719-3e51-4dc0-93df-ea3ba3665e35",
+                "resourcePath": "fonts\\fnt_debug_big\\fnt_debug_big.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "9291d3ce-5f85-4965-9c22-94bb5a663001",
             "Value": {
                 "id": "dd315217-7305-4b5d-8c28-0e7c21ad7239",

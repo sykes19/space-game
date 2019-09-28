@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if keyboard_check_pressed(vk_f4) window_set_fullscreen(!window_get_fullscreen())
+if keyboard_check_pressed(vk_f4) {
+	window_set_fullscreen(!window_get_fullscreen())
+	if (window_get_fullscreen() == false) window_set_size(ideal_width/2,ideal_height/2);
+}
+
 //a = application_get_position();
 //xx = a[0];
 //yy = a[1];
