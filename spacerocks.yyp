@@ -362,7 +362,7 @@
             "Key": "72857612-3891-43f4-b3e4-6247d5e342ee",
             "Value": {
                 "id": "2a8e992d-1ff6-4986-819b-f0c3651f9e2d",
-                "resourcePath": "objects\\obj_missile\\obj_missile.yy",
+                "resourcePath": "objects\\obj_missile_old\\obj_missile_old.yy",
                 "resourceType": "GMObject"
             }
         },

@@ -2,7 +2,7 @@
     "id": "72857612-3891-43f4-b3e4-6247d5e342ee",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_missile",
+    "name": "obj_missile_old",
     "eventList": [
         {
             "id": "40c44cde-28c7-4549-a517-8657769d6f5c",

@@ -5,17 +5,17 @@ if maxhp <= 0 {
 	switch(sprite_index)
 	{
 		case spr_asteroid_huge:
-		maxhp = 30;
+		maxhp = hugehp;
 		hp += maxhp-1;
 		break;
 	
 		case spr_asteroid_med:
-		maxhp = 20;
+		maxhp = medhp;
 		hp += maxhp-1;
 		break;
 	
 		case spr_asteroid_small:
-		maxhp = 10;
+		maxhp = smallhp;
 		hp += maxhp-1;
 		break;
 	}

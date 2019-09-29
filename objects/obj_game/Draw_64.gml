@@ -2,7 +2,7 @@
 // You can write your code in this editor
 		if window_get_fullscreen() == 0 draw_set_font(fnt_debug_big);
 		else draw_set_font(fnt_debug);
-		draw_text(10, global.screenh-30, "F4: Toggle Fullscreen");
+		draw_text(10, obj_display_manager.ideal_height-30, "F4: Toggle Fullscreen");
 switch(room){
 	case rm_game:
 		draw_set_font(fnt_clean);
@@ -18,9 +18,9 @@ switch(room){
 		var c = c_yellow;
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_text);
-		draw_text_transformed_color(global.screenw/2,global.screenh/4,"SPACE GAME",4,4,0,c,c,c,c,1);
+		draw_text_transformed_color(obj_display_manager.ideal_width/2,obj_display_manager.ideal_height/4,"SPACE GAME",4,4,0,c,c,c,c,1);
 		draw_set_font(fnt_clean);
-		draw_text(global.screenw/2, global.screenh/2.5,
+		draw_text(obj_display_manager.ideal_width/2, obj_display_manager.ideal_height/2.5,
 		@"Hit START or SPACE to begin
 
 Right Trigger / Left Click: Fire Blaster
@@ -36,9 +36,9 @@ Get 1500 points to WIN!");
 		var c = c_lime;
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_text);
-		draw_text_transformed_color(global.screenw/2,global.screenh/4,"OH, PETER!",4,4,0,c,c,c,c,1);
+		draw_text_transformed_color(obj_display_manager.ideal_width/2,obj_display_manager.ideal_height/4,"OH, PETER!",4,4,0,c,c,c,c,1);
 		draw_set_font(fnt_clean);
-		draw_text(global.screenw/2, global.screenh/2.5,
+		draw_text(obj_display_manager.ideal_width/2, obj_display_manager.ideal_height/2.5,
 		@"YOU DID IT PETER!
 
 Press START or SPACE to play again!");
@@ -49,9 +49,9 @@ Press START or SPACE to play again!");
 		var c = c_lime;
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_text);
-		draw_text_transformed_color(global.screenw/2,global.screenh/4,"OH, PETER",4,4,0,c,c,c,c,1);
+		draw_text_transformed_color(obj_display_manager.ideal_width/2,obj_display_manager.ideal_height/4,"OH, PETER",4,4,0,c,c,c,c,1);
 		draw_set_font(fnt_clean);
-		draw_text(global.screenw/2, global.screenh/2.5,
+		draw_text(obj_display_manager.ideal_width/2, obj_display_manager.ideal_height/2.5,
 		@"YOU LOST, PETER
 
 Press START or SPACE to try again!

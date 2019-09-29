@@ -82,23 +82,27 @@ if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fir
 		alarm[3] = 1;
 		ds_list_clear(_list);		// Make sure list is clear, in case it was populated before
 		_targets = collision_circle_list(x,y,4000,obj_asteroid,false,false,_list,true);
-		//Detect all asteroids in a large radius, file them into the list in order of distance from ship
-		mTarget = 0;				// Asteroid to target from list
+		//MOVE TO E-BURST
+		mTarget = 0;			// MOVE TO E-BURST
 		activePod = 0;				// Set pod (angle) missile will fire at to default
+		missileID = 0;				// Tell each missile their name
 	}
 }
 if barrageActive == 1				// If targets are acquired and missiles are ready to be fired...
 {
 	alarm_set(0, mReload);			// Delay missile generation during barrage
+	if activePod >= 6 activePod = 0;
 	if (missiles > 0 && barrageCooldown == 0 && _targets > 0)
 	{ 
 		var tempMissile = instance_create_layer(x,y,"Instances",obj_missile_long); // Create a missile
 		tempMissile.dir = image_angle;
+		tempMissile.ID = missileID;
 		tempMissile.angleThrust = image_angle+(pod[activePod]);// Set missile direction to pod angle
 		tempMissile.face = image_angle; // Set missile facing to forward-ish
+		missileID++;							// Increment missile name
 		activePod++;							// Fire next missile from different pod
 		missiles--;								// Deplete missile reserve
-		mTarget++;								// Increment target
+		mTarget++;							// MOVE TO E-BURST
 		barrageCooldown = 1;					// Initiate cooldown
 		alarm_set(2,mRefire);					// Initiate cooldown
 		audio_play_sound(sfx_missile,2,false);	// pew

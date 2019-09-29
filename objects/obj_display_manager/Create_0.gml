@@ -19,7 +19,7 @@ ideal_width = round(ideal_height*aspect_ratio);
 // Make sure it's not odd
 if(ideal_width & 1) ideal_width++;
 
-//display_set_gui_size(ideal_width,ideal_height);
+display_set_gui_size(ideal_width,ideal_height);
 surface_resize(application_surface,ideal_width,ideal_height);
 window_set_size(ideal_width/2,ideal_height/2);
 

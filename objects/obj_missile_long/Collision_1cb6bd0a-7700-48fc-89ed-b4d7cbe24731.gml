@@ -1,13 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
 audio_play_sound(sfx_hit_sm,2,0);
-instance_create_layer(x,y,"Instances",obj_explosion);
-instance_destroy();
 
-
-//for(_othersHit = 0;	_othersHit > 0; i++;)			
-//_othersHit = collision_circle_list(x,y,64,obj_asteroid,false,false,_splash,true);
-//_othersHit.hp -= damage;
-
+part_emitter_region(global.p_sys,0,x-32,x+32,y-32,y+32,ps_distr_gaussian,ps_shape_ellipse);
+part_emitter_burst(global.p_sys,0,global.p_fire_1,100);
+part_emitter_burst(global.p_sys,0,global.p_fire_2,100);
 
 other.hp -= damage;
+
+splashTarget = 0;
+_othersHit = collision_circle_list(x,y,64,obj_asteroid,false,false,_splash,true);
+for(i = 0; i < _othersHit; i++;)
+{
+	splashTarget = _splash[| i];
+	splashTarget.hp -= damage;
+}
+
+instance_destroy();
