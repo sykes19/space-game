@@ -72,18 +72,16 @@ friction = decel;
 
 //Pause animation if at default animation
 
-
-//Firing Sequence
 if (missiles < 6 && alarm_get(0) = 0) then alarm_set(0, mReload) // Reload missiles passively
 
+//Firing Sequence
 if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2)) {
-	if(instance_exists(obj_missile) == 0 && barrageActive == 0 && missiles > 0) 
+	if(barrageActive == 0 && missiles > 0) 
 	{   
 		barrageActive = 1;			// Allow barrage code to run and set it to fire immediately
 		alarm[3] = 1;
-		_list = ds_list_create();	// Create a variable to house a blank list
 		ds_list_clear(_list);		// Make sure list is clear, in case it was populated before
-		_targets = collision_circle_list(x,y,1000,obj_asteroid,false,false,_list,true);
+		_targets = collision_circle_list(x,y,4000,obj_asteroid,false,false,_list,true);
 		//Detect all asteroids in a large radius, file them into the list in order of distance from ship
 		mTarget = 0;				// Asteroid to target from list
 		activePod = 0;				// Set pod (angle) missile will fire at to default
@@ -94,9 +92,9 @@ if barrageActive == 1				// If targets are acquired and missiles are ready to be
 	alarm_set(0, mReload);			// Delay missile generation during barrage
 	if (missiles > 0 && barrageCooldown == 0 && _targets > 0)
 	{ 
-		var tempMissile = instance_create_layer(x,y,"Instances",obj_missile); // Create a missile
-		tempMissile.target = _list[| mTarget];	// Assign target to missile from target list
-		tempMissile.angle = image_angle+(pod[activePod]);// Set missile direction to pod angle
+		var tempMissile = instance_create_layer(x,y,"Instances",obj_missile_long); // Create a missile
+		tempMissile.dir = image_angle;
+		tempMissile.angleThrust = image_angle+(pod[activePod]);// Set missile direction to pod angle
 		tempMissile.face = image_angle; // Set missile facing to forward-ish
 		activePod++;							// Fire next missile from different pod
 		missiles--;								// Deplete missile reserve
@@ -108,7 +106,6 @@ if barrageActive == 1				// If targets are acquired and missiles are ready to be
 	if (missiles == 0 || _targets == 0)			// If the barrage is over, initiate cleanup and start reloading
 	{
 		barrageActive = 0;
-		ds_list_destroy(_list);
 		alarm_set(0,mReload);        
 	}
 }	

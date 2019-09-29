@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "6089cdbc-2893-4f3b-8d18-cbc1ec660620",
+            "Value": {
+                "id": "9787003e-646e-45e8-8c88-b8be242f1faa",
+                "resourcePath": "sounds\\sfx_shield_buzz\\sfx_shield_buzz.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "637dcbf3-6eac-430b-9c63-7e1cdee0fbdb",
             "Value": {
                 "id": "fa2d718a-3c60-4dbb-98ce-b639d897e841",
@@ -431,6 +439,14 @@
             }
         },
         {
+            "Key": "9d11d8ea-e5d4-436f-b2d5-3d16b73efd6c",
+            "Value": {
+                "id": "8d2f86bf-bc51-4ce9-b005-2fb10140e571",
+                "resourcePath": "objects\\obj_missile_long\\obj_missile_long.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9df485f4-7ee6-4c31-a11b-7dce6bd960c3",
             "Value": {
                 "id": "3dce046c-0a0c-40a1-9743-98b92c0305e5",
@@ -495,6 +511,14 @@
             }
         },
         {
+            "Key": "b0e587fe-8bb7-4a12-af3b-f9d56bb62e8a",
+            "Value": {
+                "id": "d24381ed-bd1a-4a4d-8679-d8385653955f",
+                "resourcePath": "scripts\\old_missiles\\old_missiles.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b10e7d33-39da-49c8-9602-37844a9943df",
             "Value": {
                 "id": "4b6ee8a6-33fd-4881-8703-a7e0a0bd428e",
@@ -543,11 +567,27 @@
             }
         },
         {
+            "Key": "c150f064-ce47-40b8-82c5-6bc2e2dbe0ca",
+            "Value": {
+                "id": "626f2734-adc9-49a4-8edf-43ebb4448745",
+                "resourcePath": "objects\\obj_particle_man\\obj_particle_man.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cac3fb06-16cf-4ae8-bede-8bc0d59c2a95",
             "Value": {
                 "id": "e1010513-2426-4495-97ae-90dc232540bd",
                 "resourcePath": "objects\\obj_ship\\obj_ship.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "cc2ea296-b0cf-49a4-a227-d96fe93ad848",
+            "Value": {
+                "id": "ba698326-7d52-4065-8603-4cf7edb3b91d",
+                "resourcePath": "sprites\\spr_asteroid_blank\\spr_asteroid_blank.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -662,7 +702,8 @@
         "afcf4770-49c1-4b23-9c81-a04094bf4bf0",
         "3d9bbe85-965a-407a-bab7-d71c7a4301eb",
         "9291d3ce-5f85-4965-9c22-94bb5a663001",
-        "b55dfa2e-451c-465d-b20a-7f3ce1d5ad09"
+        "b55dfa2e-451c-465d-b20a-7f3ce1d5ad09",
+        "b0e587fe-8bb7-4a12-af3b-f9d56bb62e8a"
     ],
     "tutorial": ""
 }

@@ -15,7 +15,7 @@ if (gamepad_button_check_pressed(0,global.gp_select) || keyboard_check(global.ke
 }
 if (room == rm_game){
 	
-	if (score >= 1500){
+	if (score >= 999999){
 		room_goto(rm_win);
 		audio_play_sound(sfx_fanfare,2,0);
 	}

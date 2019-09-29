@@ -34,16 +34,16 @@ image_angle = angle;
 if thrusters == 1
 {
 	diff = angle_difference(angle, dir); // Find the shortest angle to the target
-	if (diff <= -45) { angle += 9; }				// Sharp turn left
-	if (diff >= 45)  { angle -= 9; }				// Sharp turn right	
-	if (diff <= -29 && diff > -45) { angle += 7; }	// Turn left
-	if (diff >= 29 && diff < 45)  { angle -= 7; }	// Turn right
-	if (diff <= -10 && diff > -29) { angle += 5; }	// Correct left
-	if (diff >= 10 && diff < 29)  { angle -= 5; }	// Correct right
-	if (diff <= -6 && diff > -10) { angle += 3; }	// Correct left
-	if (diff >= 4 && diff < 10)  { angle -= 3; }	// Correct right
-	if (diff >= -3) { angle += 1; }					// Minor correction left
-	if (diff <= 3)  { angle -= 1; }					// Minor correction right
+	if (diff <= -45)				angle += 9; 	// Sharp turn left
+	if (diff >= 45)					angle -= 9; 	// Sharp turn right	
+	if (diff <= -29 && diff > -45)  angle += 7; 	// Turn left
+	if (diff >= 29 && diff < 45)	angle -= 7; 	// Turn right
+	if (diff <= -10 && diff > -29)	angle += 5; 	// Correct left
+	if (diff >= 10 && diff < 29)	angle -= 5; 	// Correct right
+	if (diff <= -6 && diff > -10)	angle += 3; 	// Correct left
+	if (diff >= 4 && diff < 10)		angle -= 3; 	// Correct right
+	if (diff >= -3)					angle += 1; 	// Minor correction left
+	if (diff <= 3)					angle -= 1; 	// Minor correction right
 }
 
 

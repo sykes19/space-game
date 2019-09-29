@@ -4,6 +4,7 @@
 #region INIT
 
 script_execute(ship_weapons, "init");
+_list = ds_list_create();
 image_speed = 0;
 image_index = 0;
 pod =				noone;

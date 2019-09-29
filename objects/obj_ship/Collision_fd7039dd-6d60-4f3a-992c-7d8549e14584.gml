@@ -15,7 +15,7 @@ obj_game.alarm[1] = 60;
 
 if instance_exists(spawnShield) == true
 {
-	audio_play_sound(sfx_hit_sm,2,0);
+	audio_play_sound(sfx_shield_buzz,2,0);
 	with(other)
 	{
 		instance_destroy();
