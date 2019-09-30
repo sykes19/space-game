@@ -17,7 +17,7 @@ part_type_shape(global.p_fire_2, pt_shape_pixel);
 part_type_size(global.p_fire_2, 1, 1, 0, 0);
 part_type_color3(global.p_fire_2, c_white, c_yellow, c_yellow);
 part_type_alpha3(global.p_fire_2, 0.8, 1, 0);
-part_type_speed(global.p_fire_2, 4, 6, -1, 0.1);
+part_type_speed(global.p_fire_2, 2, 6, -0.2, 0.1);
 part_type_direction(global.p_fire_2, 0, 359, 0, 5);
 part_type_blend(global.p_fire_2, true);
 part_type_life(global.p_fire_2, 30, 60);

@@ -6,4 +6,3 @@ dir = face;
 // Create emitter for this specific missile ID
 ID = part_emitter_create(global.p_sys);
 
-
