@@ -23,8 +23,5 @@ if hp <= 0
 			new_asteroid.hp -= abs(hp)/2;
 		}
 	}
-	
-	repeat(10){
-		// CREATE-PARTICLE
-	}
+
 }

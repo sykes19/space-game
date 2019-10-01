@@ -14,3 +14,6 @@
 		score += 10;
 		break;
 	}
+	
+		
+//repeat(40){	part_particles_create_color(global.p_plink,x,y,) }

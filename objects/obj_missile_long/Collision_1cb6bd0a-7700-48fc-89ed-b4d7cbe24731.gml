@@ -2,7 +2,7 @@
 // You can write your code in this editor
 audio_play_sound(sfx_hit_sm,2,0);
 
-part_emitter_region(global.p_sys,0,x-32,x+32,y-32,y+32,ps_distr_linear,ps_shape_ellipse);
+part_emitter_region(global.p_sys,0,x-8,x+8,y-8,y+8,ps_distr_linear,ps_shape_ellipse);
 part_emitter_burst(global.p_sys,0,global.p_fire_1,150);
 part_emitter_burst(global.p_sys,0,global.p_fire_2,100);
 

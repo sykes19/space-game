@@ -6,4 +6,4 @@ repeat(30)
 	sparkle = instance_create_layer(x,y,"InstancesHigh",obj_thrusterParticle);
 	sparkle.dir = angle-180;
 }
-audio_play_sound(sfx_thrust,2,0);
+audio_play_sound(sfx_whoosh,2,0);

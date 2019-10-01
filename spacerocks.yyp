@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "1197617b-f33d-4924-9a75-ac4ddee1c0c0",
+            "Value": {
+                "id": "64541397-581c-4333-ab0f-41fcb2ead142",
+                "resourcePath": "views\\1197617b-f33d-4924-9a75-ac4ddee1c0c0.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1a630b12-59d8-4cd9-bcdf-888810a16c48",
             "Value": {
                 "id": "8dce3d62-dd2f-4c73-81a7-c5cb7794000e",
@@ -212,14 +220,6 @@
                 "id": "c8c8fcdb-fb8b-4caa-88ec-39ef95027373",
                 "resourcePath": "views\\3cdb0d7a-9f41-4ddf-bfac-a784f0bf9443.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "3ce683fd-31e7-4b77-8a49-91168e5699f5",
-            "Value": {
-                "id": "6dc30d40-527c-4187-94a6-8eb1d185e943",
-                "resourcePath": "objects\\obj_explosion\\obj_explosion.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -375,6 +375,14 @@
             }
         },
         {
+            "Key": "74b85076-d334-4516-b4de-7f267081361e",
+            "Value": {
+                "id": "705572fc-2bcc-4e14-83a3-7c34388b5a19",
+                "resourcePath": "views\\74b85076-d334-4516-b4de-7f267081361e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "7bdddf38-fccf-48b9-8588-e9774dfee730",
             "Value": {
                 "id": "3e56b4c0-8d37-4d54-847a-5fd69550bd82",
@@ -388,6 +396,14 @@
                 "id": "06d233a0-6c58-4bf7-82e8-f2bec4a83ecd",
                 "resourcePath": "sprites\\spr_explosion\\spr_explosion.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "88beb2a3-8736-4084-8eeb-b8ef70f6d974",
+            "Value": {
+                "id": "ec8c7dfe-3aa4-46cd-96e6-bd5cc400ca0f",
+                "resourcePath": "views\\88beb2a3-8736-4084-8eeb-b8ef70f6d974.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -452,6 +468,14 @@
                 "id": "3dce046c-0a0c-40a1-9743-98b92c0305e5",
                 "resourcePath": "fonts\\fnt_clean\\fnt_clean.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "a3c2788f-d00c-446a-bf97-455db75ec559",
+            "Value": {
+                "id": "0f1d70b9-45db-4c52-92af-13c8dac400cc",
+                "resourcePath": "sounds\\sfx_whoosh\\sfx_whoosh.yy",
+                "resourceType": "GMSound"
             }
         },
         {
