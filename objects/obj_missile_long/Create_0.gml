@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 thrusterCooldown = 20;
-damage = 50;
+damage = 35;
 angle = 0;
 target = noone;
 
