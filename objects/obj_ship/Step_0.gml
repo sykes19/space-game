@@ -70,49 +70,14 @@ friction = decel;
 #region Weapons
 //MISSILES
 
-//Pause animation if at default animation
-
 if (missiles < 6 && alarm_get(0) = 0) then alarm_set(0, mReload) // Reload missiles passively
 
-//Firing Sequence
-if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2)) {
-	if(barrageActive == 0 && missiles > 0) 
-	{   
-		barrageActive = 1;			// Allow barrage code to run and set it to fire immediately
-		alarm[3] = 1;
-		ds_list_clear(_list);		// Make sure list is clear, in case it was populated before
-		_targets = collision_circle_list(x,y,4000,obj_asteroid,false,false,_list,true);
-		//MOVE TO E-BURST
-		mTarget = 0;			// MOVE TO E-BURST
-		activePod = 0;				// Set pod (angle) missile will fire at to default
-		missileID = 0;				// Tell each missile their name
-	}
-}
-if barrageActive == 1				// If targets are acquired and missiles are ready to be fired...
-{
-	alarm_set(0, mReload);			// Delay missile generation during barrage
-	if activePod >= 6 activePod = 0;
-	if (missiles > 0 && barrageCooldown == 0 && _targets > 0)
-	{ 
-		var tempMissile = instance_create_layer(x,y,"Instances",obj_missile_long); // Create a missile
-		tempMissile.dir = image_angle;
-		tempMissile.ID = missileID;
-		tempMissile.angleThrust = image_angle+(pod[activePod]);// Set missile direction to pod angle
-		tempMissile.face = image_angle; // Set missile facing to forward-ish
-		missileID++;							// Increment missile name
-		activePod++;							// Fire next missile from different pod
-		missiles--;								// Deplete missile reserve
-		mTarget++;							// MOVE TO E-BURST
-		barrageCooldown = 1;					// Initiate cooldown
-		alarm_set(2,mRefire);					// Initiate cooldown
-		audio_play_sound(sfx_missile,2,false);	// pew
-	}
-	if (missiles == 0 || _targets == 0)			// If the barrage is over, initiate cleanup and start reloading
-	{
-		barrageActive = 0;
-		alarm_set(0,mReload);        
-	}
-}	
+if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2))
+{ missile_barrage("prep"); }	// Initiate firing prep sequence if button is pressed
+if barrageActive == 1
+{ missile_barrage("active"); }	// Continue firing as long as conditions are met
+
+
 //GUN
 //Temporary code to change weapons
 if (gamepad_button_check(0, gp_padu) || keyboard_check(ord("1"))) { weaponType = "basic";}

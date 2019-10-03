@@ -1,16 +1,17 @@
 /// @description
 // You can write your code in this editor
-score		= 0;
-lives		= 3;
+score			= 0;
+lives			= 3;
 
-gamepad		= 0;
-mouse		= 1;
-input		= mouse;
+start_button	= 0; // A variable for third-party inputs to trigger room commands, as a test
+gamepad			= 0;
+mouse			= 1;
+input			= mouse;
 
 global.pause			= false;
 
 draw_set_font(fnt_text);
-audio_play_sound(sng_violet,2,1);
+audio_play_sound(sng_green,2,1);
 gamepad_set_axis_deadzone(0, 0.15);
 
 global.key_select	= vk_space;

@@ -21,7 +21,7 @@ switch(room){
 		draw_text_transformed_color(obj_display_manager.ideal_width/2,obj_display_manager.ideal_height/4,"SPACE GAME",4,4,0,c,c,c,c,1);
 		draw_set_font(fnt_clean);
 		draw_text(obj_display_manager.ideal_width/2, obj_display_manager.ideal_height/2.5,
-		@"Hit START or SPACE to begin
+		@"Click START or hit SELECT to begin!
 
 Right Trigger / Left Click: Fire Blaster
 Left Trigger / Right Click: Missile Launch 
