@@ -8,6 +8,7 @@ switch(room){
 		draw_set_font(fnt_clean);
 		draw_text(20, 20, "SCORE: "+string(score));
 		draw_text(20, 40, "LIVES: "+string(lives));
+		draw_text(20, 60, "THREAT: "+string(global.dir_threat));
 		//draw_text(20, 20, "gui h/w: "+string(display_get_gui_width())+" + "+string(display_get_gui_height()));
 		//draw_text(20, 40, "ratio: "+string(obj_display_manager.wRatio)+" + "+string(obj_display_manager.hRatio));
 
@@ -28,7 +29,7 @@ Left Trigger / Right Click: Missile Launch
 Left Stick / WASD: Move
 Right Stick / Mouse: Aim
 
-Get 1500 points to WIN!");
+Survive and aim for a high score!");
 		draw_set_halign(fa_left);
 		break;
 		
