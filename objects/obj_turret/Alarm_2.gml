@@ -43,6 +43,7 @@ else {
 	var b = instance_create_layer(x,y,"InstancesHigh",obj_beam);
 	b.image_xscale = room_width*1.5;
 }
-
 audio_stop_sound(chargeID);
 audio_play_sound(sfx_laser, 2, 0);
+
+stance = "holding"

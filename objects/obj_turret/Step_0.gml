@@ -81,10 +81,29 @@ if stance = "moving" {
 if stance = "fire" {
 	alarm[2] = charge_time;
 	alarm[1] = hold_time+charge_time;
-	
 	arm_counter = 0;
-	stance = "holding";
+	stance = "firing";
 }
+
+if stance = "firing" {
+// Time until shot fires
+	var timeLeft = (alarm[2]/charge_time);
+// Raw distance to target
+	var tDistO = distance_to_object(obj_ship);
+// Scale beam distance from 50% to 100% with time left
+	var tDist = tDistO-((tDistO/2)*timeLeft);	
+// Get raw angle to target
+	var tAngle = point_direction(x,y,obj_ship.x,obj_ship.y)
+// Provide two offset angles that converge when shot fires
+	var tAngleL = tAngle+(30*timeLeft);
+	var tAngleR = tAngle-(30*timeLeft);
+// Create coordinates for L and R lasers based on these
+	xL = x + lengthdir_x(tDist,tAngleL);
+	yL = y + lengthdir_y(tDist,tAngleL);
+	xR = x + lengthdir_x(tDist,tAngleR);
+	yR = y + lengthdir_y(tDist,tAngleR);
+}
+
 if stance = "hold" {
 	if arm_counter >= 2 {
 		stance = "fire";

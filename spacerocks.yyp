@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "1aa14d2b-4094-45de-a579-4ed58ffe069b",
+            "Value": {
+                "id": "4f57b81c-dec5-453a-826c-ae7e4255c7f5",
+                "resourcePath": "sprites\\spr_pGreen\\spr_pGreen.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "1d9e7269-feec-4e75-8697-119a13ca075a",
             "Value": {
                 "id": "f7c00e55-4e44-402c-8f13-69f50a481fae",
@@ -156,6 +164,14 @@
                 "id": "cd626d92-6acd-4420-b28e-d0953e6eb87c",
                 "resourcePath": "objects\\obj_cursor\\obj_cursor.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "2440696c-3756-47d6-8590-b1c904d4998f",
+            "Value": {
+                "id": "68e87809-ae29-44bc-8ae9-6e20b9c2fb76",
+                "resourcePath": "sprites\\spr_pBlue\\spr_pBlue.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -395,6 +411,14 @@
             "Value": {
                 "id": "6dd0288f-8618-46e7-942e-f73d217049f1",
                 "resourcePath": "sprites\\spr_turret\\spr_turret.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5c8737d2-01a2-4414-955a-785b852af76b",
+            "Value": {
+                "id": "ac007df7-af10-4cc9-838a-f3b80b6e2645",
+                "resourcePath": "sprites\\spr_pickup\\spr_pickup.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -711,6 +735,14 @@
             }
         },
         {
+            "Key": "ad23978c-c42d-48b5-bfb7-1b7d8da5c7c8",
+            "Value": {
+                "id": "6336aa10-6bf0-49eb-bf11-989f226c7ffa",
+                "resourcePath": "sprites\\spr_pOrange\\spr_pOrange.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ae1925cc-caa2-4d57-89d0-8454f8457f67",
             "Value": {
                 "id": "4bad4862-64d4-4c65-9d01-907bc7701db3",
@@ -972,6 +1004,14 @@
                 "id": "bec7d2c0-0246-475c-bd57-2dad2e3fe28b",
                 "resourcePath": "sprites\\spr_asteroid_huge\\spr_asteroid_huge.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f9fc8fb1-547e-4d26-a787-06105bbff1f7",
+            "Value": {
+                "id": "fd9d5457-9294-4a7d-91b7-7208d25943c9",
+                "resourcePath": "objects\\obj_pickup\\obj_pickup.yy",
+                "resourceType": "GMObject"
             }
         },
         {

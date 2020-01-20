@@ -110,6 +110,7 @@ if state == "alive" {
 }
 
 if state == "dead" {
+	audio_play_sound(sfx_explode,2,0);
 	spawnShield = 0;
 	image_alpha = 0;
 	image_index = 0;

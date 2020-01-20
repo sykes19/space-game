@@ -31,3 +31,6 @@ boredom_crawl			= 60;	// Time until boredom ticks upwards used in >>Step
 base_boredom_crawl		= 60;   // INIT - - - >>Room Start
 
 #endregion
+#region States INIT
+
+#endregion
