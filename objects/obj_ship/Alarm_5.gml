@@ -1,5 +1,6 @@
 /// @description Respawn
 // You can write your code in this editor
+dBuffer				= 0;
 missiles			= 0;	// How many missiles
 barrageActive		= 0;
 barrageCooldown		= 0;

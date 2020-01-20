@@ -17,3 +17,4 @@ if (keyboard_check(global.key_up) ||
 }
 #endregion
 
+if dBuffer > 0 then condition = "damaged";

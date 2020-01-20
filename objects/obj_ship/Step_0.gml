@@ -11,18 +11,21 @@ if state == "alive" {
 	if condition == "damaged" {
 		if instance_exists(spawnShield) {
 			audio_play_sound(sfx_shield_buzz,2,0);
+			dBuffer = 0;
 			condition = "normal";
 		}
 		else {
 			audio_play_sound(sfx_hit_bg,2,0);
 			hp -= dBuffer;
+			dBuffer = 0;
+			condition = "normal";
 		}			
 	}
 			
 	if (missiles < 6 && alarm[0] == 0) then alarm_set(0, mReload) // Reload missiles passively
 	if hp <= 0 then state = "dead"	
 	if stance = "free" {
-		#region Aiming
+#region Aiming
 		if input == "gamepad"
 		{
 			var aimHor = gamepad_axis_value(0, gp_axisrh);
@@ -36,7 +39,7 @@ if state == "alive" {
 			image_angle = dir;
 		}
 		#endregion
-		#region Movement
+#region Movement
 		// ----- TIM CODE -----
 
 		//All bindings are set in obj_game > Create ~Matt
@@ -87,7 +90,7 @@ if state == "alive" {
 
 		// ----- END TIM -----
 		#endregion				
-		#region Weapons
+#region Weapons
 		//MISSILES
 		if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2))
 		{ missile_barrage("prep"); }	// Initiate firing prep sequence if button is pressed

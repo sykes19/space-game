@@ -4,9 +4,9 @@
 #region INIT
 script_execute(ship_weapons, "init");
 _list = ds_list_create();
-condition			= "normal";
 stance				= "free";
 state				= "alive";
+condition			= "normal";
 dBuffer				= 0;	// Buffer to apply damage from outside sources
 hp					= 1;	// Absolute health value
 image_speed			= 0;
