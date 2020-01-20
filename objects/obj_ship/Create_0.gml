@@ -4,10 +4,11 @@
 #region INIT
 script_execute(ship_weapons, "init");
 _list = ds_list_create();
-
+condition			= "normal";
 stance				= "free";
 state				= "alive";
-hp					= 1;
+dBuffer				= 0;	// Buffer to apply damage from outside sources
+hp					= 1;	// Absolute health value
 image_speed			= 0;
 image_index			= 0;
 spawnShield			= noone;
@@ -43,11 +44,3 @@ array_set(pod, 5, 300);
 // Start missile recharging
 alarm[0] = mReload*2.5;
 #endregion
-
-// Don't spawn shield on initial spawn, for cosmetic reasons
-if global.first_spawn = 0
-{
-	spawnShield = instance_create_layer(x,y,"Instances",obj_shield);
-	alarm_set(1,120);
-}
-else {global.first_spawn = 0;}

@@ -1,7 +1,11 @@
 /// @description HP Init
 // You can write your code in this editor
 
-//global.dir_threat += 20 // Add threat
+// Apply damage from buffer, if it exists
+if dBuffer != 0 {
+	hp -= dBuffer;
+	dBuffer = 0;
+}
 
 /* Since creation happens with 0 HP (or less if we're inhereting overkill from an asteroid we broke off from)
 give myself the appropriate HP and define my existence based on my size, and add the appropriate threat */

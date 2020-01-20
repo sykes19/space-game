@@ -2,8 +2,8 @@
 // You can write your code in this editor
 score				= 0;
 lives				= 3;
-global.first_spawn = 1;
-
+global.first_spawn	= 1;
+debugMode			= 0;
 start_button		= 0; // A variable for third-party inputs to trigger room commands, as a test
 gamepad				= 0;
 mouse				= 1;

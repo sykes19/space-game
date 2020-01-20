@@ -511,14 +511,6 @@
             }
         },
         {
-            "Key": "752e4721-3455-4027-909a-9c3aa5bdb7dc",
-            "Value": {
-                "id": "28b2c342-6c78-4137-b1c7-d915fc78dad4",
-                "resourcePath": "objects\\obj_turret_laser\\obj_turret_laser.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "765b7784-c493-4f02-9b1a-cd962a9b5587",
             "Value": {
                 "id": "155436a8-7a49-4753-99c7-457a8ecb997a",
@@ -663,6 +655,14 @@
             }
         },
         {
+            "Key": "9e5db324-cc27-4b41-a2a4-8b63926515f7",
+            "Value": {
+                "id": "827669db-eb2f-42c8-b38e-a3220b7fc00e",
+                "resourcePath": "sprites\\spr_beam\\spr_beam.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a3c2788f-d00c-446a-bf97-455db75ec559",
             "Value": {
                 "id": "0f1d70b9-45db-4c52-92af-13c8dac400cc",
@@ -799,6 +799,14 @@
             }
         },
         {
+            "Key": "c1a0d446-ec97-4200-8ad2-226f76e7ed5f",
+            "Value": {
+                "id": "c19028c7-c07e-4aef-8422-3604f165c240",
+                "resourcePath": "objects\\obj_beam\\obj_beam.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c6fc0361-a408-4da3-9eef-7a07db6590c8",
             "Value": {
                 "id": "01d36269-9d53-4ef4-8047-33be01c7a480",
@@ -852,6 +860,14 @@
                 "id": "50be8df1-2e11-4226-91d5-754eb38b3621",
                 "resourcePath": "sounds\\sfx_charged\\sfx_charged.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "cffcb3a6-d3dc-450e-8ae4-e3ae2534c7e9",
+            "Value": {
+                "id": "8c352897-294b-46c5-ad55-1ece8907460c",
+                "resourcePath": "scripts\\collision_line_point\\collision_line_point.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -980,7 +996,8 @@
         "36c1d0a6-5d94-4ed4-b785-4f88514d70c6",
         "4c45055c-af96-41cf-bafc-af832764d5a0",
         "6baac6c5-2879-4359-9c70-3f8e0c214946",
-        "90100e16-5ecc-451b-9eca-410d63bcc05f"
+        "90100e16-5ecc-451b-9eca-410d63bcc05f",
+        "cffcb3a6-d3dc-450e-8ae4-e3ae2534c7e9"
     ],
     "tutorial": ""
 }

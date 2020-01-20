@@ -1,8 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_self();
 
-if state == "alive" {	
+
+if state == "alive" {
+	draw_self();
 	if missiles > 0 {
 		draw_rectangle(x-31, y+40, x-23, y+43, false);
 		if missiles > 1 {

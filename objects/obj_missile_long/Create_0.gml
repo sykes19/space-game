@@ -5,6 +5,8 @@ damage = 35;
 angle = 0;
 target = noone;
 
+image_xscale = 0.1;
+image_yscale = 0.1;
 spd = 4;
 topSpeed = 12;
 splashTarget = 0;

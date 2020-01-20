@@ -27,7 +27,7 @@ if (room == rm_game){
 		audio_play_sound(sfx_fanfare,2,0);
 	}
 
-	if (lives <= 0){
+	if (lives < 0){
 		room_goto(rm_gameover);
 		audio_pause_sound(sng_everything);
 		audio_play_sound(sfx_lose,2,0);

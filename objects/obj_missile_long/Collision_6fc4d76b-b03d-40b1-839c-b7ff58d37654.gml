@@ -13,14 +13,14 @@ part_emitter_region(global.p_sys,ID,x-80,x+80,y+80,y-80,ps_shape_line,ps_distr_l
 part_emitter_burst(global.p_sys,ID,global.p_sparkle, 30);
 
 
-other.hp -= damage;
+other.dBuffer += damage;
 
 splashTarget = 0;
 _othersHit = collision_circle_list(x,y,64,obj_asteroid,false,false,_splash,true);
 for(i = 0; i < _othersHit; i++;)
 {
 	splashTarget = _splash[| i];
-	splashTarget.hp -= damage/2;
+	splashTarget.dBuffer += damage/2;
 }
 
 instance_destroy();

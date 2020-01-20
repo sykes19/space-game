@@ -8,6 +8,7 @@ ID = part_emitter_create(global.p_sys); // Create a particle emitter unique to t
 threat_huge		= 30;
 threat_med		= 15;
 threat_small	= 8;
+dBuffer			= 0;
 hp				= 1;	// Initialize HP to something above 0. HP is determined in Begin Step
 maxhp			= 0;	// INIT - - - >>Step
 hugehp			= 30;	// Health values for balance

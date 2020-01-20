@@ -3,5 +3,5 @@
 audio_play_sound(sfx_hit_sm,2,0);
 instance_destroy();
 
-other.hp -= damage;
+other.dBuffer += damage;
 // CREATE-PARTICLE

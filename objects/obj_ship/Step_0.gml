@@ -1,4 +1,4 @@
-/// @description  Movement and controls
+/// @description  State engine
 #region Spawn expansion
 
 if image_xscale < 1 { // Expand magically! For fun!
@@ -7,19 +7,30 @@ if image_xscale < 1 { // Expand magically! For fun!
 }
 
 #endregion
-if state = "alive" {
-	if (missiles < 6 && alarm_get(0) = 0) then alarm_set(0, mReload) // Reload missiles passively
-	
+if state == "alive" {
+	if condition == "damaged" {
+		if instance_exists(spawnShield) {
+			audio_play_sound(sfx_shield_buzz,2,0);
+			condition = "normal";
+		}
+		else {
+			audio_play_sound(sfx_hit_bg,2,0);
+			hp -= dBuffer;
+		}			
+	}
+			
+	if (missiles < 6 && alarm[0] == 0) then alarm_set(0, mReload) // Reload missiles passively
+	if hp <= 0 then state = "dead"	
 	if stance = "free" {
 		#region Aiming
-		if input = "gamepad"
+		if input == "gamepad"
 		{
 			var aimHor = gamepad_axis_value(0, gp_axisrh);
 			var aimVer = gamepad_axis_value(0, gp_axisrv);
 			var dir = point_direction(0,0,aimHor,aimVer);         // "dir" is the direction I am facing
 			if((aimHor != 0) || (aimVer !=0)) image_angle = dir;  // Rotate ship to face aim direction
 		}
-		if input = "mouse"
+		if input == "mouse"
 		{
 			var dir = point_direction(x,y,mouse_x,mouse_y);
 			image_angle = dir;
@@ -95,8 +106,18 @@ if state = "alive" {
 	}
 }
 
-if state = "dead" {
+if state == "dead" {
+	spawnShield = 0;
 	image_alpha = 0;
+	image_index = 0;
 	sprite_index = -1;
+	x = room_width/2;
+	y = room_height/2;
 	alarm[5] = 90;
+	for(var i = 0; i <= 4; i++;) { alarm[i] = -1;}  // Reset all the alarms
+	state = "respawning";
+}
+
+if state == "respawning" {
+// just sit there beacuse ur dead LOL
 }

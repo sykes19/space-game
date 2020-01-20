@@ -1,11 +1,15 @@
 /// @description Movement and death check
 // You can write your code in this editor
 
+// Apply damage from buffer, if it exists.
+
 move_wrap(true,true,sprite_width); // Wrap around the screen
 
 // Spin with some minor variation
 image_angle += spin;
 
+
+	
 
 // Expand rapidly to create a smooth spawning effect
 if image_xscale < 1 {

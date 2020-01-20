@@ -1,6 +1,6 @@
-/// @description Gamepad/Mouse detection
+/// @description 
 // You can write your code in this editor
-
+#region Controls
 if (gamepad_axis_value(0, gp_axisrh) != 0 ||
     gamepad_axis_value(0, gp_axisrv) != 0 ||
 	gamepad_axis_value(0, gp_axislh) != 0 ||
@@ -15,3 +15,5 @@ if (keyboard_check(global.key_up) ||
 	mouse_check_button(mb_any)) {
 		input = "mouse";
 }
+#endregion
+

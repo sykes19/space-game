@@ -1,5 +1,9 @@
 /// @description Flight instructions
 // You can write your code in this editor
+if image_xscale < 1 { // Expand magically! For fun!
+	image_xscale += 0.08;
+	image_yscale = image_xscale;
+}
 
 // dir = My target direction, should be either directly forward or my target
 // angle = What direction the missile should be physically moving at all times

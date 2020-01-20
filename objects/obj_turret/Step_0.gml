@@ -9,6 +9,7 @@ if image_xscale < 1 {
 	image_xscale += 0.2;
 	image_yscale = image_xscale;
 }
+#region "move"
 if stance = "move" {
 	if (move_ready = 0) // Have I chosen a direction that's safe yet?
 	{
@@ -75,17 +76,19 @@ if stance = "moving" {
 		new_spd = spd;
 	}
 }
+#endregion
 
 if stance = "fire" {
 	alarm[2] = charge_time;
 	alarm[1] = hold_time+charge_time;
+	
 	arm_counter = 0;
 	stance = "holding";
 }
 if stance = "hold" {
 	if arm_counter >= 2 {
 		stance = "fire";
-		audio_play_sound(sfx_laser_charge,2,0);
+		chargeID = audio_play_sound(sfx_whirl,2,0);
 	}
 	else {
 		stance = "holding";
@@ -94,8 +97,3 @@ if stance = "hold" {
 }
 
 
-// Death code activated if health hits 0, keeping track of "overkill" damage
-if hp <= 0
-{
-	instance_destroy();
-}
