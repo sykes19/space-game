@@ -34,6 +34,7 @@ if missileMode = "active" // Runs every step as long as barrageActive is enabled
 	if (missiles == 0)			// Out of missiles?
 	{
 		barrageActive = 0;		// Disable firing sequence
-		alarm_set(0,mReload);	// Enable missile reloading timer
+		pod_switch_side();		// Reverse pods each time ability activates, for cosmetic reasons
+		alarm_set(0,mReload*2.5);	// Enable missile reloading timer
 	}
 }

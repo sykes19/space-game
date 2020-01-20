@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Gamepad/Mouse detection
 // You can write your code in this editor
 
 if (gamepad_axis_value(0, gp_axisrh) != 0 ||

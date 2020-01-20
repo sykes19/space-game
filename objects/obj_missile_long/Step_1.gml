@@ -16,10 +16,12 @@ if !instance_exists(target) && canSearch == 1
 	if searchCoin == 1
 	{					// Look in a random line every odd frame
 		target = collision_line(x,y,x+lengthdir_x(searchRange,searchRand),y+lengthdir_y(searchRange,searchRand),obj_asteroid,false,true);
+		target = collision_line(x,y,x+lengthdir_x(searchRange,searchRand),y+lengthdir_y(searchRange,searchRand),obj_turret,false,true);
 	}
 	if searchCoin == 0
 	{					// Look directly ahead every even frame
 		target = collision_line(x,y,x+lengthdir_x(searchRange/2,angle),y+lengthdir_y(searchRange/2,angle),obj_asteroid,false,true);
+		target = collision_line(x,y,x+lengthdir_x(searchRange,searchRand),y+lengthdir_y(searchRange,searchRand),obj_asteroid,false,true);
 	}
 	dir = face;
 }

@@ -2,9 +2,16 @@
 // You can write your code in this editor
 audio_play_sound(sfx_hit_sm,2,0);
 
-part_emitter_region(global.p_sys,0,x-8,x+8,y-8,y+8,ps_distr_gaussian,ps_shape_ellipse);
-part_emitter_burst(global.p_sys,0,global.p_fire_1,150);
-part_emitter_burst(global.p_sys,0,global.p_fire_2,100);
+// Sexy explosion
+instance_create_layer(x,y,"InstancesLow",obj_explosionSphere);
+part_particles_create(global.p_sys,x,y,global.p_cross,1);
+part_emitter_region(global.p_sys,ID,x-180,x+180,y-180,y+180,ps_shape_ellipse,ps_distr_gaussian);
+part_emitter_burst(global.p_sys,ID,global.p_klk_primer, irandom_range(5,6));
+part_emitter_region(global.p_sys,ID,x-80,x+80,y-80,y+80,ps_shape_line,ps_distr_linear);
+part_emitter_burst(global.p_sys,ID,global.p_sparkle, 30);
+part_emitter_region(global.p_sys,ID,x-80,x+80,y+80,y-80,ps_shape_line,ps_distr_linear);
+part_emitter_burst(global.p_sys,ID,global.p_sparkle, 30);
+
 
 other.hp -= damage/2;
 

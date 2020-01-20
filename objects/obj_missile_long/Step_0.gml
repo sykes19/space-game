@@ -21,16 +21,8 @@ if thrusters == 1 // If thusters ignite, speed up and home in
 	spd = topSpeed;
 	
 	diff = angle_difference(angle, dir); // Find the shortest angle to the target
-	if (diff >= 1)					angle -= 2; 	// Sharp turn left
-	if (diff <= -1)					angle += 2; 	// Sharp turn right	
-//	if (diff <= -29 && diff > -45)  angle += 7; 	// Turn left
-//	if (diff >= 29 && diff < 45)	angle -= 7; 	// Turn right
-//	if (diff <= -10 && diff > -29)	angle += 5; 	// Correct left
-//	if (diff >= 10 && diff < 29)	angle -= 5; 	// Correct right
-//	if (diff <= -6 && diff > -10)	angle += 3; 	// Correct left
-//	if (diff >= 4 && diff < 10)		angle -= 3; 	// Correct right
-//	if (diff >= -3)					angle += 1; 	// Minor correction left
-//	if (diff <= 3)					angle -= 1; 	// Minor correction right
+	if (diff >= 1)					angle -= 2; 	// turn left
+	if (diff <= -1)					angle += 2; 	// turn right	
 }
 face = angle;
 image_angle = face;

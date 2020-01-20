@@ -4,12 +4,12 @@ if instance_exists(spawnShield) == false
 {
 	lives -= 1;
 	audio_play_sound(sfx_explode, 2, 0);
-	instance_destroy();
+	state = "dead";
 	repeat(10){
 	// CREATE-PARTICLE
-}
+	}
 
-obj_game.alarm[1] = 60;
+//obj_director.alarm[2] = 60; // Respawn timer
 
 }
 
@@ -18,7 +18,7 @@ if instance_exists(spawnShield) == true
 	audio_play_sound(sfx_shield_buzz,2,0);
 	with(other)
 	{
-		instance_destroy();
+		hp -= maxhp+1;
 	}
 	repeat(10){
 		//CREATE-PARTICLE

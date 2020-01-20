@@ -47,6 +47,7 @@ if (weaponAction == "step")
 			{
 				var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
 				iBullet.direction = image_angle;
+				iBullet.image_angle = image_angle;
 				audio_play_sound(sfx_pew2, 2, 0);
 				weaponCooldown = 0;
 			}

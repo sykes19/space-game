@@ -1,14 +1,16 @@
 /// @description
 // You can write your code in this editor
-score			= 0;
-lives			= 3;
+score				= 0;
+lives				= 3;
+global.first_spawn = 1;
 
-start_button	= 0; // A variable for third-party inputs to trigger room commands, as a test
-gamepad			= 0;
-mouse			= 1;
-input			= mouse;
+start_button		= 0; // A variable for third-party inputs to trigger room commands, as a test
+gamepad				= 0;
+mouse				= 1;
+input				= mouse;
 
 global.pause			= false;
+game_set_speed(60, gamespeed_fps);
 
 draw_set_font(fnt_text);
 audio_play_sound(sng_green,2,1);
