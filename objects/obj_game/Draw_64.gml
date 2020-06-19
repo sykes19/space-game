@@ -17,7 +17,7 @@ switch(room){
 			draw_text(20, 160, "BOREDOM: "+string(global.dir_boredom));
 			draw_text(20, 180, "USABLE BUDGET: "+string(obj_director.budget_usable));
 			draw_text(20, 200, "BONUS CTR: "+string(obj_director.budget_bonus));
-			draw_text(20, 220, "SHIP: "+string(obj_ship.state)+" "+string(obj_ship.stance));		
+			draw_text(20, 220, "SHIP: "+string(obj_player.state)+" "+string(obj_player.stance));		
 			//draw_text(20, 20, "gui h/w: "+string(display_get_gui_width())+" + "+string(display_get_gui_height()));
 			//draw_text(20, 40, "ratio: "+string(obj_display_manager.wRatio)+" + "+string(obj_display_manager.hRatio));
 		}

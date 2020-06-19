@@ -2,8 +2,8 @@
 // You can write your code in this editor
 
 // Simultaneously check for ship and asteroids within line of fire
-var rAst	= collision_line_point(x, y, obj_ship.x, obj_ship.y, obj_asteroid, true, true);
-var rShip	= collision_line_point(x, y, obj_ship.x, obj_ship.y, obj_ship, true, true);
+var rAst	= collision_line_point(x, y, obj_player.x, obj_player.y, obj_asteroid, true, true);
+var rShip	= collision_line_point(x, y, obj_player.x, obj_player.y, obj_player, true, true);
 var dAst	= point_distance(x,y,rAst[1],rAst[2]);
 var dShip	= point_distance(x,y,rShip[1],rShip[2]);
 var aAst	= point_direction(x,y,rAst[1],rAst[2]);
@@ -47,3 +47,8 @@ audio_stop_sound(chargeID);
 audio_play_sound(sfx_laser, 2, 0);
 
 stance = "holding"
+
+
+
+
+

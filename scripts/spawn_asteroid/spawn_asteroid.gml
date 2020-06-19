@@ -11,8 +11,8 @@ while (!satisfied) {
 		var xx = irandom_range(20, room_width-20);	// Spawn on the top or bottom
 		var yy = choose(irandom_range(20,400), room_height-(irandom_range(20,400)));
 	}
-	if instance_exists(obj_ship) {  // If the player exists, check if the spawn is too close
-		if (point_distance(xx,yy,obj_ship.x,obj_ship.y) > 500) {
+	if instance_exists(obj_player) {  // If the player exists, check if the spawn is too close
+		if (point_distance(xx,yy,obj_player.x,obj_player.y) > 500) {
 			satisfied = 1;							// Confirm the spawn is safe
 		}
 	}

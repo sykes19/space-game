@@ -2,7 +2,7 @@
     "id": "03446744-5a02-4a93-8333-9758181aa68a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_turret",
+    "name": "obj_enemy",
     "eventList": [
         {
             "id": "c75f68a1-7d9a-4ed4-9cb0-30470bccc373",
@@ -55,16 +55,6 @@
             "m_owner": "03446744-5a02-4a93-8333-9758181aa68a"
         },
         {
-            "id": "1154d68b-384b-4d29-ab1d-fc4d16838d06",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 1,
-            "eventtype": 3,
-            "m_owner": "03446744-5a02-4a93-8333-9758181aa68a"
-        },
-        {
             "id": "d8af0c9b-5543-44b1-b48d-13de56ff580f",
             "modelName": "GMEvent",
             "mvc": "1.0",
@@ -73,11 +63,31 @@
             "enumb": 0,
             "eventtype": 8,
             "m_owner": "03446744-5a02-4a93-8333-9758181aa68a"
+        },
+        {
+            "id": "ba644c43-a8cc-4790-b2db-6b131a223f5c",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 2,
+            "eventtype": 3,
+            "m_owner": "03446744-5a02-4a93-8333-9758181aa68a"
+        },
+        {
+            "id": "540bd320-0a2c-45df-8d9b-39b55dd3ac0d",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 1,
+            "eventtype": 3,
+            "m_owner": "03446744-5a02-4a93-8333-9758181aa68a"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "parentObjectId": "cac3fb06-16cf-4ae8-bede-8bc0d59c2a95",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

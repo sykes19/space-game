@@ -42,7 +42,7 @@
             "Key": "03446744-5a02-4a93-8333-9758181aa68a",
             "Value": {
                 "id": "dd13ca63-4f35-407f-b546-483f62d85c4f",
-                "resourcePath": "objects\\obj_turret\\obj_turret.yy",
+                "resourcePath": "objects\\obj_enemy\\obj_enemy.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -356,6 +356,14 @@
                 "id": "3a620948-1281-4f39-a29a-ffea7a52b8be",
                 "resourcePath": "sprites\\spr_klk\\spr_klk.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "4bc06791-d52d-4397-b33b-d1dde485e97b",
+            "Value": {
+                "id": "c0257131-e099-42a4-8aaf-7e72f68a4c56",
+                "resourcePath": "objects\\obj_player\\obj_player.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -908,6 +916,14 @@
                 "id": "d1e02776-1a02-4e8b-9992-f5361fd99c19",
                 "resourcePath": "sounds\\sfx_fanfare\\sfx_fanfare.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "d4c2295c-e634-4983-bd6b-011d4332884d",
+            "Value": {
+                "id": "687f9b59-da13-4672-92e0-8786a5cc8b1a",
+                "resourcePath": "objects\\obj_pDelta\\obj_pDelta.yy",
+                "resourceType": "GMObject"
             }
         },
         {

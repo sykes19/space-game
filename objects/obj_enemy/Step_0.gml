@@ -1,15 +1,11 @@
 /// @description Stance orders
 // You can write your code in this editor
-
-move_wrap(true,true,sprite_width); // Wrap around the screen
+event_inherited();
 
 image_angle += spin;
-// Expand rapidly to create a smooth spawning effect
-if image_xscale < 1 {
-	image_xscale += 0.2;
-	image_yscale = image_xscale;
-}
-#region "move"
+if state = "alive" {
+	
+#region Move
 if stance = "move" {
 	if (move_ready = 0) // Have I chosen a direction that's safe yet?
 	{
@@ -77,7 +73,7 @@ if stance = "moving" {
 	}
 }
 #endregion
-
+#region Fire
 if stance = "fire" {
 	alarm[2] = charge_time;
 	alarm[1] = hold_time+charge_time;
@@ -88,15 +84,15 @@ if stance = "fire" {
 if stance = "firing" {
 // Time until shot fires
 	var timeLeft = (alarm[2]/charge_time);
-// Raw distance to target
-	var tDistO = distance_to_object(obj_ship);
-// Scale beam distance from 50% to 100% with time left
-	var tDist = tDistO-((tDistO/2)*timeLeft);	
+// Raw distance to target (adding sprite width)
+	var tDistO = distance_to_object(obj_player);
 // Get raw angle to target
-	var tAngle = point_direction(x,y,obj_ship.x,obj_ship.y)
+	var tAngle = point_direction(x,y,obj_player.x,obj_player.y)
 // Provide two offset angles that converge when shot fires
-	var tAngleL = tAngle+(30*timeLeft);
-	var tAngleR = tAngle-(30*timeLeft);
+	var tAngleL = tAngle+(20*timeLeft);
+	var tAngleR = tAngle-(20*timeLeft);
+// Scale beam distance based on bullshit calculations. Plus a small boost.
+	var tDist = 90 + (tDistO-((tDistO/2)*(timeLeft/4)));	
 // Create coordinates for L and R lasers based on these
 	xL = x + lengthdir_x(tDist,tAngleL);
 	yL = y + lengthdir_y(tDist,tAngleL);
@@ -114,5 +110,10 @@ if stance = "hold" {
 		arm_counter += 1;
 	}
 }
+#endregion
 
+}
 
+if state = "dead" {
+	instance_destroy();
+}

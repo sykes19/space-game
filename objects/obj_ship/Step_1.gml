@@ -1,20 +1,32 @@
-/// @description 
+/// @description Damage check
 // You can write your code in this editor
-#region Controls
-if (gamepad_axis_value(0, gp_axisrh) != 0 ||
-    gamepad_axis_value(0, gp_axisrv) != 0 ||
-	gamepad_axis_value(0, gp_axislh) != 0 ||
-	gamepad_axis_value(0, gp_axislv) != 0) {
-		input = "gamepad";
-}
-if (keyboard_check(global.key_up) ||
-	keyboard_check(global.key_down) ||
-	keyboard_check(global.key_right) ||
-	keyboard_check(global.key_left) ||
-	keyboard_check(global.key_select) ||
-	mouse_check_button(mb_any)) {
-		input = "mouse";
-}
-#endregion
 
-if dBuffer > 0 then condition = "damaged";
+// Verify status of shields, if any
+if shields > 0 || instance_exists(spawnShield) {
+	shielded = true;
+}
+else shielded = false;
+
+// Apply damage from buffer, if it exists, and trigger damage scenario
+if dBuffer > 0 and shielded == true {		// Took damage, but are shielded
+	condition = "damaged";					// Tell engine about it
+	audio_play_sound(sfx_shield_buzz,2,0);	// Bzzt
+	dBuffer = 0;							// Empty damage buffer
+	if instance_exists(spawnShield) != true {
+		shields -= 1	// Remove a layer of shielding if it's not the spawnShield
+	}	
+}
+if dBuffer > 0 and shielded == false {		// Took damage, and have no shields
+	hp -= dBuffer;							// Reduce HP
+	dBuffer = 0;							// Empty damage buffer
+	//AUDIO PLAY GENERIC OOF SOUND
+}
+
+// Sanity check. Used for debugging if negative damage is dealt.
+if dBuffer < 0 then dBuffer = 0;	
+
+// Trigger death scenario for step event if so
+if hp <= 0 && state == "alive"
+{
+	state = "dead";
+}

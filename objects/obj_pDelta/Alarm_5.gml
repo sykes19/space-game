@@ -1,5 +1,6 @@
 /// @description Respawn
 // You can write your code in this editor
+shields				= 0;
 dBuffer				= 0;
 missiles			= 0;	// How many missiles
 barrageActive		= 0;
@@ -19,4 +20,5 @@ alarm[0]			= 60;		// Start missile recharging
 
 // Spawn shield creation
 spawnShield = instance_create_layer(x,y,"Instances",obj_shield);
+spawnShield.host = obj_player;		// Tell the shield to attach to this instance
 alarm_set(1,120);

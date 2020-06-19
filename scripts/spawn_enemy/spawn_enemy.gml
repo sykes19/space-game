@@ -11,8 +11,8 @@ while (!satisfied) {
 		var xx = irandom_range(80, room_width-80);	// Spawn on the top or bottom
 		var yy = choose(irandom_range(80,400), room_height-(irandom_range(80,400)));
 	}
-	if instance_exists(obj_ship) {  // If the player exists, check if the spawn is too close
-		if (point_distance(xx,yy,obj_ship.x,obj_ship.y) > 500) {
+	if instance_exists(obj_player) {  // If the player exists, check if the spawn is too close
+		if (point_distance(xx,yy,obj_player.x,obj_player.y) > 500) {
 			satisfied = 1;							// Confirm the spawn is safe
 		}
 	}
@@ -21,6 +21,6 @@ while (!satisfied) {
 }
 
 if type == "turret" {
-	var new_turret = instance_create_layer(xx,yy,"InstancesHigh",obj_turret);
+	var new_turret = instance_create_layer(xx,yy,"InstancesHigh",obj_enemy);
 }
 
