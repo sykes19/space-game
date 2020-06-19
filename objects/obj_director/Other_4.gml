@@ -3,7 +3,9 @@
 if(room == rm_game){
 	alarm[1] = par_inc_wait;	// Begin the spawn cool off period
 	alarm[3] = wave_interval;	// Kick off the Director
-	instance_create_layer(room_width/2,room_height/2,"Instances",obj_player); // It's me!
+	
+	// Spawn my chosen ship
+	instance_create_layer(room_width/2,room_height/2,"Instances",global.myShip);
 		repeat(10){					// Create some basic asteroids to begin play.
 		switch(choose(1,1,1,1,2,2,2,3))		// Choose an asteroid to spawn
 		{									// Asteroids provide threat/reduce budget themselves

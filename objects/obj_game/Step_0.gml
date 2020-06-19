@@ -4,6 +4,8 @@ if (start_button == 1 || gamepad_button_check_pressed(0,global.gp_select) || key
 	switch(room){
 		case rm_start:
 			start_button = 0;
+				// TEMP CODE TO DETERMINE SHIP SELECTION
+			global.myShip = obj_pDelta;
 			room_goto(rm_game);
 			audio_stop_sound(sng_green);
 			audio_play_sound(sng_everything,1,true);

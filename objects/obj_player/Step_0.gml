@@ -2,7 +2,6 @@
 event_inherited();
 
 if state == "alive" {		
-	if (missiles < 6 && alarm[0] == 0) then alarm_set(0, mReload) // Reload missiles passively	
 	if stance = "free" {
 #region Aiming
 		if input == "gamepad"
@@ -70,17 +69,11 @@ if state == "alive" {
 		// ----- END TIM -----
 		#endregion				
 #region Weapons
-		//MISSILES
-		if(gamepad_button_check(0, global.gp_fire2) || mouse_check_button(global.key_fire2))
-		{ missile_barrage("prep"); }	// Initiate firing prep sequence if button is pressed
-		if barrageActive == 1
-		{ missile_barrage("active"); }	// Continue firing as long as conditions are met
-
 
 		//GUN
 		//Temporary code to change weapons
 		if (gamepad_button_check(0, gp_padu) || keyboard_check(ord("1"))) { weaponType = "basic";}
-		if (gamepad_button_check(0, gp_padr) || keyboard_check(ord("2"))) { weaponType = "hunter";}
+		//if (gamepad_button_check(0, gp_padr) || keyboard_check(ord("2"))) { weaponType = "hunter";}
 		var weaponInput = gamepad_button_check(0, global.gp_fire1) || mouse_check_button(global.key_fire1)
 		ship_weapons("step", weaponInput); // All primary weapon functionality now in ship_weapons script.
 		#endregion

@@ -6,13 +6,13 @@ _list = ds_list_create();
 script_execute(ship_weapons, "init");
 input				= "mouse";	// This is to prevent errors when ship spawns
 alarm[0]			= 60;		// Start missile recharging
+aniSpeed			= 2;	// Speed the ship animation plays
+aniDelay			= 10;	// Delay before closing ship up after ability expires
+abilityActive		= 0;
 #endregion
 #region BALANCE
 hp			= 1;
 accel		= 1.5;		// Acceleration value
 topspeed	= 7;		// Speed value
 decel		= 0.8;		// Used to calculate drag
-#endregion
-#region MISSILES
-missile_barrage("init");
 #endregion

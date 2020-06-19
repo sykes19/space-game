@@ -2,15 +2,11 @@
 // You can write your code in this editor
 shields				= 0;
 dBuffer				= 0;
-missiles			= 0;	// How many missiles
-barrageActive		= 0;
-barrageCooldown		= 0;
-missilesCharged		= 0;
 hp					= 1;
 stance				= "free";
 state				= "alive";
 condition			= "normal";
-sprite_index		= spr_ship;	// Visibly respawn the ship
+sprite_index		= shipSprite;	// Visibly respawn the ship
 image_alpha			= 1;
 image_speed			= 0;
 image_index			= 0;

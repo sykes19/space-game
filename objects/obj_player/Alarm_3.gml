@@ -4,7 +4,7 @@ if image_index < image_number -1 {
 	image_index += 1;
 	alarm[3] = aniSpeed;
 }
-else if barrageActive == 0 
+else if abilityActive == 0 
 {
 	alarm[4] = aniDelay;
 	alarm[3] = -1;
