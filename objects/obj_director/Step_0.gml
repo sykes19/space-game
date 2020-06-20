@@ -1,7 +1,9 @@
 /// @description Difficulty adjustment
 // You can write your code in this editor
 
+// Add flat amount of threat based on density of enemies and asteroids
 global.dir_astThreat = instance_number(obj_asteroid)*3;
+global.dir_eneThreat = instance_number(obj_enemy)*30;
 
 // Wait for >>Alarm 1 before difficulty scaling begins
 if spawn_cooldown = 0 {
@@ -13,8 +15,8 @@ if spawn_cooldown = 0 {
 	difficulty_crawl = base_difficulty_crawl * stress;
 }
 
-// Threat adjusted for asteroid amount and player threat.
-adjThreat = global.dir_threat + global.dir_astThreat - global.pThreat;
+// Threat adjusted for asteroid and enemy density subtracted by player threat.
+adjThreat = global.dir_threat + (global.dir_astThreat+global.dir_eneThreat) - global.pThreat;
 if adjThreat < 10 then adjThreat = 10;
 
 // Budget is how much threat is available to convert into enemies and hazards

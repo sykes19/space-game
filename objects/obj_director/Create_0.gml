@@ -9,6 +9,7 @@ room_goto(rm_start);
 alarm[0] = 1; // Trigger star spawn code
 #endregion
 #region Director INIT
+global.dir_eneThreat	= 0;	// INIT - - - Each enemy adds threat
 global.dir_astThreat	= 0;    // INIT - - - Each asteroid adds threat
 global.dir_threat		= 1;	// INIT - - - How much hazard currency is in play >>Step
 global.dir_difficulty	= 1;	// How hard is the game right now >>Step

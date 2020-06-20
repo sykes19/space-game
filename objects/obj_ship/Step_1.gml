@@ -1,6 +1,9 @@
 /// @description Damage check
 // You can write your code in this editor
 
+// Set condition to normal if not already
+condition = "normal";
+
 // Verify status of shields, if any
 if shields > 0 || instance_exists(spawnShield) {
 	shielded = true;
@@ -20,7 +23,7 @@ if dBuffer > 0 and shielded == false {		// Took damage, and have no shields
 	condition = "damaged";
 	hp -= dBuffer;							// Reduce HP
 	dBuffer = 0;							// Empty damage buffer
-	//AUDIO PLAY GENERIC OOF SOUND
+	audio_play_sound(sfx_oof,2,0);
 }
 
 // Sanity check. Used for debugging if negative damage is dealt.

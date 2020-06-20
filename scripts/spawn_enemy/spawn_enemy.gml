@@ -21,6 +21,6 @@ while (!satisfied) {
 }
 
 if type == "turret" {
-	var new_turret = instance_create_layer(xx,yy,"InstancesHigh",obj_enemy);
+	var new_turret = instance_create_layer(xx,yy,"InstancesHigh",obj_eSniper);
 }
 

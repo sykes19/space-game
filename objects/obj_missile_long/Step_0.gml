@@ -9,6 +9,7 @@ if image_xscale < 1 { // Expand magically! For fun!
 // angle = What direction the missile should be physically moving at all times
 // face = What direction the missile should be pointing to
 // angleThrust = temporary angle to travel before thruster ignition
+// diff = The difference in angle between my facing direction, and the target
 
 
 if thrusters == 0							// While thrusters are off, drift slowly
