@@ -30,13 +30,3 @@ excitement = (global.dir_budget / global.dir_par) * 100
 // A ratio of how dangerous the world is VS how dangerous it should be. Higher value is more danger.
 stress = adjThreat / global.dir_par;
 if stress < 0.1 then stress = 0.1;
-
-
-// DEBUG COMMANDS
-if keyboard_check_pressed(vk_f5)
-{
-	spawn_enemy("turret");
-}
-if keyboard_check_pressed(vk_f2) {
-	instance_create_layer(mouse_x,mouse_y,"InstancesHigh",obj_pickup);
-}

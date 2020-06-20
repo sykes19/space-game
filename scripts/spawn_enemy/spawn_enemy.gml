@@ -1,4 +1,5 @@
 var type = argument[0];
+var lvl = argument[1];
 var satisfied = 0;
 
 // Choose a random location somewhere near the edges of the screen
@@ -20,7 +21,9 @@ while (!satisfied) {
 	else if point_distance(xx,yy,room_width/2,room_height/2) > 500 then satisfied = 1
 }
 
-if type == "turret" {
-	var new_turret = instance_create_layer(xx,yy,"InstancesHigh",obj_eSniper);
+if type == "sniper" {
+	var new_enemy = instance_create_layer(xx,yy,"InstancesHigh",obj_eSniper);
+	if lvl != 0 then new_enemy.level = lvl;
+	with new_enemy {event_user(0);}
 }
 

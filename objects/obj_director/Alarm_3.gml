@@ -20,8 +20,8 @@ if(room == rm_game){ // If we are on the game screen
 				// Convert trimmed budget to boredom currency
 				// Difference divided by budget creates a % of budget that was trimmed
 				// Multiply that by difficulty, which is usually a multiplier that starts at 1 and goes up
-				// Then multiply the entire thing by 20 because that number just felt right
-				var boredom_boost = (global.dir_difficulty*(budget_diff/global.dir_budget))*20
+				// Then multiply the entire thing by 25 because that number just felt right
+				var boredom_boost = (global.dir_difficulty*(budget_diff/global.dir_budget))*25
 				global.dir_boredom += boredom_boost;
 				show_debug_message("Boredom increased by: "+string(boredom_boost));
 			}
@@ -55,12 +55,14 @@ if(room == rm_game){ // If we are on the game screen
 	if (random_range(1,100) <= global.dir_boredom/3) {
 		// Decide whether it will be a good or a bad event based on stress.
 		// Roll within a 50 unit range and multiple it by the stress ratio.
+		// Weighted naturally to be enemies. Powerups should be rare here.
 		var flip = 0;
-		if(random_range(25,75)*stress) >= 35 then flip = 1; else flip = 0;
+		if(random_range(25,75)*stress) >= 60 then flip = 1; else flip = 0;
 			// 1 is good, 0 is evil
 			switch (flip) {
-				case 0:		// Spawn an enemy railgun turret
-				spawn_enemy("turret");
+				case 0:		// Spawn an enemy railgun sniper
+				var eLevel = (round(global.dir_difficulty)+round((1/stress)/2))+choose(-1,0,1)
+				spawn_enemy("sniper", eLevel);
 				global.dir_boredom -= global.dir_boredom*0.8;	// Reduce Boredom by 80%
 				break;
 				case 1:		// Spawn a powerup

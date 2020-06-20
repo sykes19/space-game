@@ -5,9 +5,27 @@
 event_inherited();
 
 
-image_angle += spin;
+
 if state = "alive" {
-	
+
+#region Aiming
+// target = The angle toward the player
+// angle = The angle I am facing
+// diff = The difference in angle between my facing direction, and the target
+
+// Aim speed slows down significantly while charging laser
+//					if stance == "firing" then aimSpeed = 2; else aimSpeed = 10;
+// I will revisit this when I rework the laser aiming.
+
+target = point_direction(x,y,obj_player.x,obj_player.y);
+diff = angle_difference(angle, target); // Find the shortest angle to the target
+// Turn toward player, ramping in speed based on angle difference
+if (diff >= 2)		angle -= ((abs(diff)/8)+2); 	// turn left
+if (diff <= -2)		angle += ((abs(diff)/8)+2); 	// turn right
+// Will eventually be based on aimSpeed as defined in the commented code above
+
+image_angle = angle;
+#endregion
 #region Move
 if stance = "move" {
 	if (move_ready = 0) // Have I chosen a direction that's safe yet?

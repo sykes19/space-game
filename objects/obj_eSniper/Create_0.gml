@@ -5,16 +5,16 @@
 event_inherited();
 #region Basic Enemy INIT
 threat_val		= 100;		// How much threat am I worth
-scoreWorth		= 100;		// How many points am I worth
-hp				= 90;		// Health
+scoreWorth		= 100;		// Score, updated in Begin Step
+hp				= 90;		// Health, updated in Begin Step
 stance			= "move";	// Initiate enemy AI movement
 
 image_angle = irandom_range(0,359); // Give a random visual rotation to start
-global.dir_threat += threat_val		// Add threat
 #endregion
 
 #region Unique Enemy INIT
-beamDamage		= 35;		// Beam damage, obviously
+charge_time		= 100
+hold_time		= 44
 angle		= image_angle;	// AIM CODE
 diff			= 0;		// AIM CODE
 aimSpeed		= 0;		// AIM CODE
@@ -23,9 +23,9 @@ dir				= 0;		// MOVE CODE
 spd				= 1;		// MOVE CODE
 dist			= 0;		// MOVE CODE
 new_spd			= 0;		// MOVE CODE
-spin			= 0.3;		// Speed to naturally spin
-hold_time		= 40;		// Wait between movements
-charge_time		= 90;		// How long to charge the laser
+hold_time		= 0;		// INIT CODE (begin step)
+charge_time		= 0;		// INIT CODE (begin step)
+beamDamage		= 35			// Beam damage, obviously
 arm_counter		= choose(1,0,-1); // Randomize the movements before shooting at spawn
 move_ready		= 0;
 move_distance	= 250;

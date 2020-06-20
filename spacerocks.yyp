@@ -55,14 +55,6 @@
             }
         },
         {
-            "Key": "06b25c70-6ac9-4d02-a569-cf86258ac3f1",
-            "Value": {
-                "id": "6c150e77-5c32-4dd8-b175-a388a12ae7e4",
-                "resourcePath": "objects\\obj_eTurret\\obj_eTurret.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "06fd47e9-2199-4eac-86c9-91b79a290046",
             "Value": {
                 "id": "3dd5b750-c3af-4340-bbe5-4bfcb5e702e9",
@@ -503,6 +495,14 @@
             }
         },
         {
+            "Key": "6688300f-958c-4cbe-be6e-fb53b13dd781",
+            "Value": {
+                "id": "df4ab5d9-8c97-433b-b6cc-c955e48eb964",
+                "resourcePath": "sprites\\spr_eBullet\\spr_eBullet.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "67e6d190-3536-47a1-8975-7472c65aa381",
             "Value": {
                 "id": "213ef955-307c-4bc3-b989-934165804967",
@@ -639,6 +639,14 @@
             }
         },
         {
+            "Key": "85b14b0c-2b18-4cf8-8eec-8b9fbd2d6094",
+            "Value": {
+                "id": "8e17e05b-4a8c-41e4-95a6-e9fc92b73545",
+                "resourcePath": "objects\\obj_eTurret\\obj_eTurret.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "86415410-0e75-402f-b909-902918c4ff8b",
             "Value": {
                 "id": "52c79c16-0c6c-41eb-b411-dc2aa876e866",
@@ -660,6 +668,14 @@
                 "id": "72feab18-9fe1-401c-8a8e-1dd4362bd3d8",
                 "resourcePath": "views\\8b59570c-2814-4a58-bd0d-2c8f69780464.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8ce85a9f-f473-4649-bd6f-943068e02adc",
+            "Value": {
+                "id": "3f1ec907-d30e-4152-8314-b9b6dbba3a47",
+                "resourcePath": "scripts\\enemy_init\\enemy_init.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -967,6 +983,14 @@
             }
         },
         {
+            "Key": "cd9f584c-3788-4e36-8605-a277525b5ddc",
+            "Value": {
+                "id": "11081777-8545-483e-8a9f-6735a86c1790",
+                "resourcePath": "objects\\obj_eBullet\\obj_eBullet.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "cf60cdd0-a9c8-4fdc-9ab1-3f8a0c8825cb",
             "Value": {
                 "id": "f2c30e2d-6461-405c-8ef7-410fe6547320",
@@ -1152,6 +1176,7 @@
         "9291d3ce-5f85-4965-9c22-94bb5a663001",
         "afcf4770-49c1-4b23-9c81-a04094bf4bf0",
         "71267dc7-38b3-4e63-b3d3-1e81dec95436",
+        "8ce85a9f-f473-4649-bd6f-943068e02adc",
         "b0e587fe-8bb7-4a12-af3b-f9d56bb62e8a",
         "36c1d0a6-5d94-4ed4-b785-4f88514d70c6",
         "4c45055c-af96-41cf-bafc-af832764d5a0",
