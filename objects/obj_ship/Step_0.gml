@@ -6,11 +6,13 @@ if image_xscale < 1 { // Expand magically! For fun!
 	image_yscale = image_xscale;
 }
 
+
 #endregion
 
-/* Basic format for state engine
+// Basic format for state engine
 
 if state == "alive" {
+	
 	if condition == "damaged" {
 		
 	}		
@@ -18,4 +20,4 @@ if state == "alive" {
 
 if state == "dead" {
 
-}*/
+}

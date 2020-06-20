@@ -5,7 +5,7 @@
 event_inherited();
 
 missiles += 1;
-if missiles == 6 {
+
+if missiles == mCap {
 	audio_play_sound(sfx_charged,2,false);
-	missilesCharged = 1;
 }

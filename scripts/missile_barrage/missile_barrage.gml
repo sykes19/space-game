@@ -4,13 +4,10 @@ if missileMode = "init"
 {
 	aniSpeed			= 2;	// Speed the ship animation plays
 	aniDelay			= 10;	// Delay before closing ship up after firing missiles
-	mRefire				= 6;	// Time between missiles firing
-	mReload				= 25;	// How long between missile recharging
 	pod					= noone;
 	missiles			= 0;	// How many missiles
 	barrageActive		= 0;
 	barrageCooldown		= 0;
-	missilesCharged		= 0;
 	activePod			= noone;// INIT - - -
 	podSide				= 0;	// Which side to fire the first missile
 	pod = array_create(6);		// Missile launch directions

@@ -81,7 +81,13 @@ if stance = "fire" {
 	stance = "firing";
 }
 
-if stance = "firing" {
+if stance == "firing" {
+	if condition == "damaged" {
+		stance = "move";
+		audio_stop_sound(chargeID);
+		alarm[2] = -1;
+		arm_counter += 1;
+	}
 // Time until shot fires
 	var timeLeft = (alarm[2]/charge_time);
 // Raw distance to target (adding sprite width)

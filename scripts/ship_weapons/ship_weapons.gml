@@ -54,6 +54,23 @@ if (weaponAction == "step")
 			break;
 		}
 		
+		case "spread": // Basic cannon with spread powerup
+		{
+			if ((weaponInput > 0) && (weaponCooldown >= 18))
+			{	
+				var a = -10;
+				repeat(3){
+					var iBullet = instance_create_layer(x,y,"Instances",obj_bullet);
+					iBullet.direction = image_angle + a;
+					iBullet.image_angle = image_angle + a;
+					a += 10;
+				}
+				audio_play_sound(sfx_pew2, 2, 0);
+				weaponCooldown = 0;
+			}
+			break;
+		}
+		
 		case "hunter": // Metroid Prime Hunters inspired burst->charge weapon
 		{
 			if ((weaponInput > 0) || weaponHunterForce)

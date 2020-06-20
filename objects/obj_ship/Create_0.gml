@@ -2,6 +2,9 @@
 // You can write your code in this editor
 
 #region INIT
+powAbility	= 0;
+powSpread	= 0;
+
 
 stance				= "free";	// What action am I performing?
 state				= "alive";	// alive, dead, respawning

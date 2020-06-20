@@ -3,6 +3,9 @@
 shields				= 0;
 dBuffer				= 0;
 hp					= 1;
+powAbility			= 0;
+powSpread			= 0;
+global.pThreat		= 0;
 stance				= "free";
 state				= "alive";
 condition			= "normal";

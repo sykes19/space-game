@@ -9,11 +9,14 @@ room_goto(rm_start);
 alarm[0] = 1; // Trigger star spawn code
 #endregion
 #region Director INIT
+global.dir_astThreat	= 0;    // INIT - - - Each asteroid adds threat
 global.dir_threat		= 1;	// INIT - - - How much hazard currency is in play >>Step
 global.dir_difficulty	= 1;	// How hard is the game right now >>Step
 global.dir_budget		= 0;	// INIT - - - Free currency to spawn hazards >>Step
 global.dir_par			= 200;	// Target for how much threat should be in play >>Step
 global.dir_boredom		= 0;	// INIT - - - Value to determine when the director will spice things up
+global.pThreat			= 0;	// INIT - - - The threat level of the player
+adjThreat				= 0;	// INIT - - - Adjusted threat after taking into account player
 budget_usable			= 0;	// INIT - - - How much budget we can spend on the current wave >>Alarm 3
 budget_bonus			= 0;	// INIT - - - >>Alarm 3
 spawn_cooldown			= 1;	// Pause difficulty climb for first few seconds of game

@@ -17,6 +17,7 @@ if dBuffer > 0 and shielded == true {		// Took damage, but are shielded
 	}	
 }
 if dBuffer > 0 and shielded == false {		// Took damage, and have no shields
+	condition = "damaged";
 	hp -= dBuffer;							// Reduce HP
 	dBuffer = 0;							// Empty damage buffer
 	//AUDIO PLAY GENERIC OOF SOUND

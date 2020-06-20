@@ -9,6 +9,8 @@ alarm[0]			= 60;		// Start missile recharging
 aniSpeed			= 2;	// Speed the ship animation plays
 aniDelay			= 10;	// Delay before closing ship up after ability expires
 abilityActive		= 0;
+powAbGet			= false;
+powSpGet			= false;
 #endregion
 #region BALANCE
 hp			= 1;

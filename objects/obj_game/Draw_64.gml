@@ -9,14 +9,14 @@ switch(room){
 		draw_text(20, 20, "SCORE: "+string(score));
 		draw_text(20, 40, "LIVES: "+string(lives));
 		if debugMode == 1 {	
-			draw_text(20, 60, "THREAT: "+string(global.dir_threat));
+			draw_text(20, 60, "THREAT: "+string(global.dir_threat)+" adj= "+string(obj_director.adjThreat));
 			draw_text(20, 80, "PAR: "+string(global.dir_par));
 			draw_text(20, 100, "STRESS: "+string(obj_director.stress));
 			draw_text(20, 120, "DIFF INC: "+string(obj_director.difficulty_crawl));
 			draw_text(20, 140, "DIFFICULTY: "+string(global.dir_difficulty));
 			draw_text(20, 160, "BOREDOM: "+string(global.dir_boredom));
 			draw_text(20, 180, "USABLE BUDGET: "+string(obj_director.budget_usable));
-			draw_text(20, 200, "BONUS CTR: "+string(obj_director.budget_bonus));
+			draw_text(20, 200, "BUDGET: "+string(global.dir_budget));
 			draw_text(20, 220, "SHIP: "+string(obj_player.state)+" "+string(obj_player.stance));		
 			//draw_text(20, 20, "gui h/w: "+string(display_get_gui_width())+" + "+string(display_get_gui_height()));
 			//draw_text(20, 40, "ratio: "+string(obj_display_manager.wRatio)+" + "+string(obj_display_manager.hRatio));

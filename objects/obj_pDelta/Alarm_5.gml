@@ -6,4 +6,3 @@ event_inherited();
 missiles			= 0;
 barrageActive		= 0;
 barrageCooldown		= 0;
-missilesCharged		= 0;

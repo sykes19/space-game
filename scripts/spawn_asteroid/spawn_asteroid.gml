@@ -26,16 +26,19 @@ if type == "small" {
 	global.dir_threat += new_asteroid.threat_small; // Add threat
 	new_asteroid.sprite_index = spr_asteroid_small;
 	new_asteroid.dir = point_direction(new_asteroid.x, new_asteroid.y, room_width/2, room_height/2) + irandom_range(-30,30);
+	return new_asteroid.threat_small;
 }
 if type == "med" {
 	var new_asteroid = instance_create_layer(xx,yy,"Instances",obj_asteroid);
 	global.dir_threat += new_asteroid.threat_med;
 	new_asteroid.sprite_index = spr_asteroid_med;
 	new_asteroid.dir = point_direction(new_asteroid.x, new_asteroid.y, room_width/2, room_height/2) + irandom_range(-30,30);
+	return new_asteroid.threat_med;
 }
 if type == "huge" {
 	var new_asteroid = instance_create_layer(xx,yy,"Instances",obj_asteroid);
 	global.dir_threat += new_asteroid.threat_huge;
 	new_asteroid.sprite_index = spr_asteroid_huge;
 	new_asteroid.dir = point_direction(new_asteroid.x, new_asteroid.y, room_width/2, room_height/2) + irandom_range(-30,30);
+	return new_asteroid.threat_huge;
 }

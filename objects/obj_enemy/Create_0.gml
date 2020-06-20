@@ -1,9 +1,9 @@
 /// @description Balance perams
 // You can write your code in this editor
 event_inherited();
-threat_val		= 100		// How much threat am I worth
-scoreWorth		= 100		// How many points am I worth
-hp				= 150;
+threat_val		= 100;		// How much threat am I worth
+scoreWorth		= 100;		// How many points am I worth
+hp				= 90;
 dir				= 0;
 dBuffer			= 0;
 beamDamage		= 35;		// Beam damage, obviously
