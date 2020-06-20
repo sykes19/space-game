@@ -8,7 +8,7 @@ if(room == rm_game){ // If we are on the game screen
 	{
 		if (random_range(1,100) <= excitement/3) // Chance to spawn a wave, max of 33% if map is clear
 		{
-			audio_play_sound(sfx_pew3,2,0);
+			//audio_play_sound(sfx_pew3,2,0);
 			/* The budget for this spawn wave is 25% of availble budget + 12.5% of available budget increased
 			by a multiplier based on how many waves we've not spawned anything */
 			budget_usable = (global.dir_budget/4) + ((global.dir_budget/8)*(budget_bonus/4));
@@ -61,12 +61,16 @@ if(room == rm_game){ // If we are on the game screen
 			// 1 is good, 0 is evil
 			switch (flip) {
 				case 0:		// Spawn an enemy railgun sniper
-				var eLevel = (round(global.dir_difficulty)+round((1/stress)/2))+choose(-1,0,1)
-				spawn_enemy("sniper", eLevel);
-				global.dir_boredom -= global.dir_boredom*0.8;	// Reduce Boredom by 80%
+				var amount = choose(1,1,2,3)
+				repeat(amount) {
+					var eLevel = (round(global.dir_difficulty) + round((1/stress)/2)) + round(choose(-1,0,1)-(amount/1.5))
+					eLevel = clamp(eLevel,1,8);
+					spawn_enemy(choose("sniper", "turret"), eLevel);
+				}
+				global.dir_boredom -= global.dir_boredom*(0.6+(amount/8));	// Reduce Boredom based on how many spawned
 				break;
 				case 1:		// Spawn a powerup
-				instance_create_layer(irandom_range(100,room_width-100),irandom_range(100,room_height-100),"InstancesHigh",obj_pickup);
+				spawn_powerup(irandom_range(150,room_width-150),irandom_range(150,room_height-150),"any");
 				global.dir_boredom -= global.dir_boredom*0.4;	// Reduce Boredom by 40%
 				break;
 		}

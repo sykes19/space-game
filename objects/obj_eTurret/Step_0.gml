@@ -9,22 +9,9 @@ event_inherited();
 if state = "alive" {
 
 #region Aiming
-// target = The angle toward the player
-// angle = The angle I am facing
-// diff = The difference in angle between my facing direction, and the target
-
-// Aim speed slows down significantly while charging laser
-//					if stance == "firing" then aimSpeed = 2; else aimSpeed = 10;
-// I will revisit this when I rework the laser aiming.
-
-target = point_direction(x,y,obj_player.x,obj_player.y);
-diff = angle_difference(angle, target); // Find the shortest angle to the target
-// Turn toward player, ramping in speed based on angle difference
-if (diff >= 2)		angle -= ((abs(diff)/8)+2); 	// turn left
-if (diff <= -2)		angle += ((abs(diff)/8)+2); 	// turn right
-// Will eventually be based on aimSpeed as defined in the commented code above
-
 image_angle = angle;
+// Spin left or right based on coinflip on spawn
+if spin == 1 then angle += spinSpd; else angle -= spinSpd;
 #endregion
 #region Move
 if stance = "move" {
@@ -95,47 +82,24 @@ if stance = "moving" {
 }
 #endregion
 #region Fire
-if stance = "fire" {		// I am shooting on this turn
-	alarm[2] = charge_time;				// Charge laser
-	alarm[1] = hold_time+charge_time;	// Prep my next movement
-	arm_counter = 0;					// Laser no longer armed
-	stance = "firing";					// Initiate firing process
+if stance = "fire" {
+	ammoLeft = ammo;	// Reload
+	alarm[2] = 1;		// Start firing sequence
+	stance = "firing"	// Enter firing stance
+	arm_counter = 0;	// Reset movements until next fire
 }
 
-if stance == "firing" {					// I am shooting laser
-	if condition == "damaged" {			// If I get shot while charging...
-		stance = "move";				// Quit firing and move
-		audio_stop_sound(chargeID);		// SFX cleanup
-		alarm[2] = -1;					// Cancel firing sequence
-		arm_counter += 1;				// Fire earlier next time
-	}
-// Time until shot fires
-	var timeLeft = (alarm[2]/charge_time);
-// Raw distance to target (adding sprite width)
-	var tDistO = distance_to_object(obj_player);
-// Get raw angle to target
-	var tAngle = point_direction(x,y,obj_player.x,obj_player.y)
-// Provide two offset angles that converge when shot fires
-	var tAngleL = tAngle+(20*timeLeft);
-	var tAngleR = tAngle-(20*timeLeft);
-// Scale beam distance based on bullshit calculations. Plus a small boost.
-	var tDist = 90 + (tDistO-((tDistO/2)*(timeLeft/4)));	
-// Create coordinates for L and R lasers based on these
-// These are used in the Draw event
-	xL = x + lengthdir_x(tDist,tAngleL);
-	yL = y + lengthdir_y(tDist,tAngleL);
-	xR = x + lengthdir_x(tDist,tAngleR);
-	yR = y + lengthdir_y(tDist,tAngleR);
+if stance == "firing" {	
+	// I am shooting gun waiting for Alarm 2 to finish
 }
 
 if stance = "hold" {			// Hold between movements
-	if arm_counter >= 2 {		// Check if laser is ready
+	if arm_counter >= 1 {		// Check if laser is ready
 		stance = "fire";		// Yes? Shoot.
-		chargeID = audio_play_sound(sfx_lasTarget,2,0);
 	}
 	else {
 		stance = "holding";		// Hold still a sec
-		arm_counter += 1;		// One step closer to arming laser.
+		arm_counter += 1;		// One step closer to arming.
 	}
 }
 #endregion

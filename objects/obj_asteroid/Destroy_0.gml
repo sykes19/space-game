@@ -24,3 +24,6 @@
 		part_emitter_burst(global.p_sys,ID,global.p_astChunk, 3);
 		break;
 	}
+	
+// Tiny % chance to drop any powerup on death
+if irandom_range(1,150) == 1 then spawn_powerup(x,y,"any");

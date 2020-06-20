@@ -9,25 +9,24 @@ scoreWorth		= 100;		// Score, updated in Begin Step
 hp				= 90;		// Health, updated in Begin Step
 stance			= "move";	// Initiate enemy AI movement
 
-image_angle = irandom_range(0,359); // Give a random visual rotation to start
+angle = irandom_range(0,359); // Give a random visual rotation to start
 #endregion
 
 #region Unique Enemy INIT
-charge_time		= 100
-hold_time		= 44
-angle		= image_angle;	// AIM CODE
-diff			= 0;		// AIM CODE
-aimSpeed		= 0;		// AIM CODE
-target			= 0;		// AIM CODE
+refireTime		= 18;
+ammoLeft		= 0;
+ammo			= 3;
+spin			= choose(1,0);
+spinSpd			= 0.3;
+hold_time		= 40;
+angle			= image_angle;	// AIM CODE
 dir				= 0;		// MOVE CODE
-spd				= 1;		// MOVE CODE
+spd				= 0.6;		// MOVE CODE
 dist			= 0;		// MOVE CODE
 new_spd			= 0;		// MOVE CODE
 hold_time		= 0;		// INIT CODE (begin step)
 charge_time		= 0;		// INIT CODE (begin step)
-beamDamage		= 35			// Beam damage, obviously
+move_ready		= 0;		// MOVE CODE
+move_distance	= 250;		// MOVE CODE
 arm_counter		= choose(1,0,-1); // Randomize the movements before shooting at spawn
-move_ready		= 0;
-move_distance	= 250;
-chargeID		= 0;
 #endregion

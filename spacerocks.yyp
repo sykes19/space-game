@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "18c3b119-2b3d-4109-8ad9-9a9d5dbe4ad9",
+            "Value": {
+                "id": "a6cfe6f8-2e64-486a-ae73-f3e8f4a6a4b2",
+                "resourcePath": "scripts\\spawn_powerup\\spawn_powerup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1a630b12-59d8-4cd9-bcdf-888810a16c48",
             "Value": {
                 "id": "8dce3d62-dd2f-4c73-81a7-c5cb7794000e",
@@ -588,14 +596,6 @@
                 "id": "705572fc-2bcc-4e14-83a3-7c34388b5a19",
                 "resourcePath": "views\\74b85076-d334-4516-b4de-7f267081361e.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "765b7784-c493-4f02-9b1a-cd962a9b5587",
-            "Value": {
-                "id": "155436a8-7a49-4753-99c7-457a8ecb997a",
-                "resourcePath": "sprites\\spr_ammo\\spr_ammo.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -1181,6 +1181,7 @@
         "36c1d0a6-5d94-4ed4-b785-4f88514d70c6",
         "4c45055c-af96-41cf-bafc-af832764d5a0",
         "6baac6c5-2879-4359-9c70-3f8e0c214946",
+        "18c3b119-2b3d-4109-8ad9-9a9d5dbe4ad9",
         "90100e16-5ecc-451b-9eca-410d63bcc05f",
         "cffcb3a6-d3dc-450e-8ae4-e3ae2534c7e9"
     ],

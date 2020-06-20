@@ -26,4 +26,9 @@ if type == "sniper" {
 	if lvl != 0 then new_enemy.level = lvl;
 	with new_enemy {event_user(0);}
 }
+if type == "turret" {
+	var new_enemy = instance_create_layer(xx,yy,"InstancesHigh",obj_eTurret);
+	if lvl != 0 then new_enemy.level = lvl;
+	with new_enemy {event_user(0);}
+}
 

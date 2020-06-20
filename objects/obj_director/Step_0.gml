@@ -8,7 +8,7 @@ global.dir_eneThreat = instance_number(obj_enemy)*30;
 // Wait for >>Alarm 1 before difficulty scaling begins
 if spawn_cooldown = 0 {
 	// Threat goal (par) will increase as the difficulty rises
-	global.dir_par = par_target_base * global.dir_difficulty;
+	global.dir_par = par_target_base * (1+((global.dir_difficulty-1)/2));
 
 	// The timer for increasing difficulty is based on how much stress the player is under
 	// Lower stress, faster time

@@ -75,10 +75,10 @@ part_type_orientation(global.p_fire_2, 0, 0, 0, 0, true);
 
 global.p_trail = part_type_create();
 part_type_shape(global.p_trail, pt_shape_pixel);
-part_type_size(global.p_trail, 1, 1, 0, 0);
+part_type_size(global.p_trail, 2, 2, -0.04, 0);
 part_type_alpha3(global.p_trail, 1, 0.6, 0);
 part_type_blend(global.p_trail, true);
-part_type_life(global.p_trail, 50, 50);
+part_type_life(global.p_trail, 25, 25);
 #endregion
 
 #region Asteroid Parts

@@ -4,13 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
-if stance = "firing"
-{
-	draw_line_width_color(x,y,xL,yL,2,c_red,c_red);
-	draw_line_width_color(x,y,xR,yR,2,c_red,c_red);
-}
-
 if obj_game.debugMode == 1
 {
 	draw_text(x+30,y+30,"Lv "+string(level));
+	draw_text(x+30,y+50,"St "+string(stance));
+	draw_text(x+30,y+70,"Tm "+string(alarm[1]));
 }
