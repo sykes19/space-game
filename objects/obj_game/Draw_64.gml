@@ -59,10 +59,10 @@ Press START or SPACE to play again!");
 		var c = c_lime;
 		draw_set_halign(fa_center);
 		draw_set_font(fnt_text);
-		draw_text_transformed_color(obj_display_manager.ideal_width/2,obj_display_manager.ideal_height/4,"OH, PETER",4,4,0,c,c,c,c,1);
+		draw_text_transformed_color(obj_display_manager.ideal_width/2,obj_display_manager.ideal_height/4,"GAME OVER, DUDE",4,4,0,c,c,c,c,1);
 		draw_set_font(fnt_clean);
 		draw_text(obj_display_manager.ideal_width/2, obj_display_manager.ideal_height/2.5,
-		@"YOU LOST, PETER
+		@"PLACEHOLDER SCREEN
 
 Press START or SPACE to try again!
 SCORE: "+string(score));
