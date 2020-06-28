@@ -112,7 +112,7 @@ if state == "alive" {
 		
 		var weaponInput = gamepad_button_check(0, global.gp_fire1) || mouse_check_button(global.key_fire1)
 		if powSpread == true { weaponType = "spread" } else { weaponType = "basic" }
-		ship_weapons("step", weaponInput); // All primary weapon functionality now in ship_weapons script.
+		ship_weapon_step(weaponInput); // All primary weapon functionality now in ship_weapons script.
 		#endregion
 	}
 	if stance == "stun" {

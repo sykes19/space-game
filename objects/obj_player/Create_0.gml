@@ -3,7 +3,7 @@
 event_inherited();
 #region INIT
 _list = ds_list_create();
-script_execute(ship_weapons, "init");
+ship_weapon_init();
 input				= "mouse";	// This is to prevent errors when ship spawns
 alarm[0]			= 60;		// Start missile recharging
 aniSpeed			= 2;	// Speed the ship animation plays
